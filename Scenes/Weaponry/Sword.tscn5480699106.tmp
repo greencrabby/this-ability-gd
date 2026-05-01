@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cduuediwxcxxr"]
+
+[ext_resource type="Script" uid="uid://w0elu68xtnsx" path="res://Scenes/Weaponry/sword.gd" id="1_psg41"]
+[ext_resource type="Texture2D" uid="uid://bmjyw0eb7j0fq" path="res://Assets/BasicSword.png" id="2_ej1uy"]
+[ext_resource type="Texture2D" uid="uid://djwko005crng5" path="res://Assets/BasicSlash.png" id="3_he8q3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_612jg"]
+size = Vector2(10.540758, 18.275719)
+
+[node name="Sword" type="Node2D" unique_id=1833184451]
+script = ExtResource("1_psg41")
+damage = null
+attack_duration = null
+idle_texture = ExtResource("2_ej1uy")
+energy_cost = 0.0
+fire_rate = 3.0
+has_alt_ability = null
+alt_cooldown_time = null
+
+[node name="IdleSprite" type="Sprite2D" parent="." unique_id=787717671]
+texture = ExtResource("2_ej1uy")
+
+[node name="SlashSprite" type="Sprite2D" parent="." unique_id=1806595470]
+position = Vector2(9, -3)
+scale = Vector2(2, 2)
+texture = ExtResource("3_he8q3")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2053860366]
+scale = Vector2(1.7076572, 1.7509571)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=242441516]
+position = Vector2(5.855976, 0.5711162)
+shape = SubResource("RectangleShape2D_612jg")

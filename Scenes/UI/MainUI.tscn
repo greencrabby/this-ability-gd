@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cw480a6y3fkfg"]
+
+[ext_resource type="Script" uid="uid://b5wtoqcd00wwx" path="res://Scripts/UI/health_bar.gd" id="1_4cpe4"]
+[ext_resource type="Texture2D" uid="uid://u1wvt4locyqu" path="res://Assets/Sprites/Coin.png" id="1_6303l"]
+[ext_resource type="Script" uid="uid://dt3jg41kk7iv6" path="res://Scripts/UI/money_ui.gd" id="1_wl0va"]
+[ext_resource type="Texture2D" uid="uid://rphvfwqv0vdp" path="res://Assets/Sprites/healthbarfull.png" id="2_upwrp"]
+[ext_resource type="Texture2D" uid="uid://cjt2ushsa8kd" path="res://Assets/Sprites/healthbar0.png" id="2_vryf0"]
+[ext_resource type="Script" uid="uid://ccdmebhkvnvop" path="res://Scripts/UI/energy_bar.gd" id="2_yftfo"]
+[ext_resource type="Texture2D" uid="uid://dffnc2tj0q3pt" path="res://Assets/Sprites/healthbar25.png" id="3_uwavw"]
+[ext_resource type="Texture2D" uid="uid://crnhiuof3lyyw" path="res://Assets/Sprites/healthbar50.png" id="4_7uoew"]
+[ext_resource type="Texture2D" uid="uid://b4o3ttish6ipl" path="res://Assets/Sprites/healthbar75.png" id="5_tt03y"]
+[ext_resource type="Texture2D" uid="uid://cb3r0h160xcdk" path="res://Assets/Sprites/energybar0.png" id="8_i3k3v"]
+[ext_resource type="Texture2D" uid="uid://ct3n5u8dpkym6" path="res://Assets/Sprites/energybarfull.png" id="8_uwavw"]
+[ext_resource type="Texture2D" uid="uid://claof5jua5ilp" path="res://Assets/Sprites/energybar25.png" id="9_ifnkk"]
+[ext_resource type="Texture2D" uid="uid://dd3hf0snvemw3" path="res://Assets/Sprites/energybar50.png" id="10_xuwth"]
+[ext_resource type="Texture2D" uid="uid://cjfaahqmaioxl" path="res://Assets/Sprites/energybar75.png" id="11_kshw1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1971691407]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=74577399]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="Node2D" parent="VBoxContainer" unique_id=101671372]
+script = ExtResource("1_4cpe4")
+textures = Array[Texture2D]([ExtResource("2_vryf0"), ExtResource("3_uwavw"), ExtResource("4_7uoew"), ExtResource("5_tt03y"), ExtResource("2_upwrp")])
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HealthBar" unique_id=1508051053]
+position = Vector2(50, 41)
+scale = Vector2(5, 5)
+texture = ExtResource("2_upwrp")
+
+[node name="Label" type="Label" parent="VBoxContainer/HealthBar" unique_id=1502187702]
+offset_left = 6.0
+offset_top = 30.0
+offset_right = 46.0
+offset_bottom = 53.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "test"
+
+[node name="EnergyBar" type="Node2D" parent="VBoxContainer" unique_id=1444306247]
+script = ExtResource("2_yftfo")
+textures = Array[Texture2D]([ExtResource("8_i3k3v"), ExtResource("9_ifnkk"), ExtResource("10_xuwth"), ExtResource("11_kshw1"), ExtResource("8_uwavw")])
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/EnergyBar" unique_id=1510866307]
+position = Vector2(49.999996, 81)
+scale = Vector2(5, 5)
+texture = ExtResource("8_uwavw")
+
+[node name="Label" type="Label" parent="VBoxContainer/EnergyBar" unique_id=885390614]
+offset_left = 6.0
+offset_top = 68.0
+offset_right = 46.0
+offset_bottom = 91.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "test"
+
+[node name="CurrencyUI" type="HBoxContainer" parent="VBoxContainer" unique_id=806202340]
+layout_mode = 2
+script = ExtResource("1_wl0va")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/CurrencyUI" unique_id=67890236]
+layout_mode = 2
+texture = ExtResource("1_6303l")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/CurrencyUI" unique_id=2112537494]
+layout_mode = 2
+text = "placeholder"

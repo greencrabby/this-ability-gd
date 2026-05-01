@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StarterPack" format=3 uid="uid://dq76l0t6gp4jr"]
+
+[ext_resource type="Texture2D" uid="uid://bxbqgqxalhuq0" path="res://Assets/Sprites/artillerist.png" id="1_vb2l5"]
+[ext_resource type="Script" uid="uid://bpvwcdh3ir0s" path="res://Scripts/System/starter_pack.gd" id="2_ptxoq"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="3_efkp7"]
+[ext_resource type="Resource" uid="uid://dl8akd2gfekeq" path="res://Scripts/Relics/Actual/StarterPackRelics/GunStarter.tres" id="4_vti60"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="5_0kale"]
+[ext_resource type="Resource" uid="uid://c8orjxyyaj203" path="res://Scripts/System/DataTree/TreeArtillerist.tres" id="6_ctk47"]
+
+[resource]
+script = ExtResource("2_ptxoq")
+pack_name = "Artillerist"
+description = "+50% Gun DMG, -50% Melee DMG"
+starting_weapon = ExtResource("5_0kale")
+starting_relics = Array[ExtResource("3_efkp7")]([ExtResource("4_vti60")])
+icon = ExtResource("1_vb2l5")
+unlocking_skill = ExtResource("6_ctk47")
+metadata/_custom_type_script = "uid://bpvwcdh3ir0s"

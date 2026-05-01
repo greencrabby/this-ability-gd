@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealRelic" format=3 uid="uid://cjalh5dmtbg0x"]
+
+[ext_resource type="Script" uid="uid://clxif2jynqn8l" path="res://Scripts/Relics/Base/healthnheal.gd" id="1_bx3pn"]
+[ext_resource type="Texture2D" uid="uid://curyhcg4ohtd6" path="res://Assets/Sprites/assortedfruits.png" id="1_utw28"]
+
+[resource]
+script = ExtResource("1_bx3pn")
+heal_amount = 3.0
+max_hp_bonus = 3.0
+relic_name = "Assorted Fruits"
+description = "+3 Max HP, Heal 3 HP"
+icon = ExtResource("1_utw28")
+metadata/_custom_type_script = "uid://clxif2jynqn8l"

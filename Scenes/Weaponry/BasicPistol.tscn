@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ta00g1yeo0sl"]
+
+[ext_resource type="Script" uid="uid://kwogjivvaugk" path="res://Scripts/Weaponry/basic_single_shot.gd" id="1_i3g5s"]
+[ext_resource type="Texture2D" uid="uid://bsx415g1iwij0" path="res://Assets/Sprites/BasicPistol.png" id="1_uik8i"]
+[ext_resource type="PackedScene" uid="uid://cpn5jrxn5esnj" path="res://Scenes/Weaponry/NormalBullet.tscn" id="2_ym1qj"]
+[ext_resource type="Texture2D" uid="uid://bxtmobykhbvi2" path="res://Assets/Sprites/Bullet.png" id="3_limri"]
+[ext_resource type="AudioStream" uid="uid://do0w0qqaky31p" path="res://Assets/Audio/gunsound.wav" id="5_w1rw4"]
+
+[node name="Node2D" type="Node2D" unique_id=451915541]
+script = ExtResource("1_i3g5s")
+bullet_scene = ExtResource("2_ym1qj")
+bullet_texture = ExtResource("3_limri")
+bullet_speed = 150.0
+display_texture = ExtResource("1_uik8i")
+fire_rate = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=773515965]
+texture = ExtResource("1_uik8i")
+
+[node name="BulletSpawn" type="Marker2D" parent="." unique_id=1626418727]
+position = Vector2(4, -1)
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1310186667]
+stream = ExtResource("5_w1rw4")
+volume_db = -10.0
+pitch_scale = 4.0

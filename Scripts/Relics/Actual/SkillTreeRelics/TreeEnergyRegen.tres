@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnergyRelic" format=3 uid="uid://b3m3sharci6bg"]
+
+[ext_resource type="Script" uid="uid://bwmov5mnlorn" path="res://Scripts/Relics/Base/energy.gd" id="1_6t758"]
+
+[resource]
+script = ExtResource("1_6t758")
+regen_multiplier = 2.0
+relic_name = "Tree Energy Regen"
+rarity = 3
+metadata/_custom_type_script = "uid://bwmov5mnlorn"

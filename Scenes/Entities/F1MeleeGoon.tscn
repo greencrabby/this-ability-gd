@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b7w4ximk8adym"]
+
+[ext_resource type="Script" uid="uid://bad6jkojx0kf2" path="res://Scripts/Entities/melee_goon.gd" id="1_ovo8n"]
+[ext_resource type="Texture2D" uid="uid://elmna5e5fxpa" path="res://Assets/Maps and Sheets/f1meleegoon.png" id="2_8xgn2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw6y8"]
+height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rl2f"]
+atlas = ExtResource("2_8xgn2")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8yql"]
+atlas = ExtResource("2_8xgn2")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mryr"]
+atlas = ExtResource("2_8xgn2")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_grjrg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rl2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8yql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mryr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovo8n"]
+radius = 11.0
+
+[node name="F1MeleeGoon" type="CharacterBody2D" unique_id=797738605]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_ovo8n")
+speed = 100.0
+retreat_speed = 100.0
+knockback_resistance = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=776155668]
+shape = SubResource("CapsuleShape2D_dw6y8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1099768352]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_grjrg")
+autoplay = "default"
+frame_progress = 0.55480915
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1603028039]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=99216874]
+shape = SubResource("CapsuleShape2D_ovo8n")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hit"]

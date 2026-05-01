@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cgt8sbdi3lp75"]
+
+[ext_resource type="Script" uid="uid://bognd4ya37877" path="res://Scripts/World/map_generator.gd" id="1_m4g6e"]
+[ext_resource type="PackedScene" uid="uid://l2l4t0r5vbsv" path="res://Scenes/World/MapNode.tscn" id="3_vmtlu"]
+
+[node name="MapScene" type="Node2D" unique_id=507495779]
+
+[node name="MapGenerator" type="Node2D" parent="." unique_id=538158821]
+script = ExtResource("1_m4g6e")
+node_scene = ExtResource("3_vmtlu")

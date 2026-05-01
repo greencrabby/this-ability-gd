@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cuw1ogopqtcc6"]
+
+[ext_resource type="Script" uid="uid://cfvtkxh8t0lye" path="res://Scripts/Weaponry/weapon_pickup.gd" id="1_05kig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt372"]
+
+[node name="WeaponPickup" type="Area2D" unique_id=1721789781 groups=["interactable"]]
+collision_layer = 16
+script = ExtResource("1_05kig")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=660533640]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852443584]
+shape = SubResource("RectangleShape2D_dt372")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

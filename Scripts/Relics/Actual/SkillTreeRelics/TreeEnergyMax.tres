@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnergyRelic" format=3 uid="uid://do00ejqpiessp"]
+
+[ext_resource type="Script" uid="uid://bwmov5mnlorn" path="res://Scripts/Relics/Base/energy.gd" id="1_8ows3"]
+
+[resource]
+script = ExtResource("1_8ows3")
+max_energy_bonus = 100.0
+relic_name = "Tree Energy Max"
+rarity = 3
+metadata/_custom_type_script = "uid://bwmov5mnlorn"

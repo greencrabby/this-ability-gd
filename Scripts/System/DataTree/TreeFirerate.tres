@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://6mbl4qp70gw6"]
+
+[ext_resource type="Resource" uid="uid://dcjvy3ep7ov5s" path="res://Scripts/System/DataTree/TreeDMG.tres" id="1_8mgdt"]
+[ext_resource type="Resource" uid="uid://do35nkgej0hcc" path="res://Scripts/Relics/Actual/SkillTreeRelics/TreeFirerate.tres" id="1_cqwy5"]
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_n5w34"]
+
+[resource]
+script = ExtResource("1_n5w34")
+skill_name = "+10% Firerate"
+cost = 30
+prerequisite = ExtResource("1_8mgdt")
+associated_relic = ExtResource("1_cqwy5")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"

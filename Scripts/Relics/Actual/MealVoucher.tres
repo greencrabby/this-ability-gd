@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealRelic" format=3 uid="uid://bpk4v2x7qperf"]
+
+[ext_resource type="Script" uid="uid://clxif2jynqn8l" path="res://Scripts/Relics/Base/healthnheal.gd" id="1_s40wp"]
+[ext_resource type="Texture2D" uid="uid://bb8nqm056r4l1" path="res://Assets/Sprites/mealvoucher.png" id="1_v2y4l"]
+
+[resource]
+script = ExtResource("1_s40wp")
+heal_amount = 6.0
+max_hp_bonus = 2.0
+relic_name = "Meal Voucher"
+description = "+6 Max HP, Heal 2 HP"
+icon = ExtResource("1_v2y4l")
+metadata/_custom_type_script = "uid://clxif2jynqn8l"

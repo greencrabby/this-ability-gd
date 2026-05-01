@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bgea5ryj053vp"]
+
+[ext_resource type="Script" uid="uid://w0elu68xtnsx" path="res://Scripts/Weaponry/basic_sword.gd" id="1_msmms"]
+[ext_resource type="Texture2D" uid="uid://dhytb8v5mtix8" path="res://Assets/Sprites/diamondpickaxe.png" id="2_2l8qd"]
+[ext_resource type="Texture2D" uid="uid://dcdgwxiw4pfvt" path="res://Assets/Sprites/ironpickaxe.png" id="2_skre5"]
+[ext_resource type="Texture2D" uid="uid://rbn5wglfwrff" path="res://Assets/Sprites/BasicSlash.png" id="3_2l8qd"]
+[ext_resource type="PackedScene" uid="uid://dfwgr7td5mclo" path="res://Scenes/UI/DamageNumber.tscn" id="4_djpvx"]
+[ext_resource type="AudioStream" uid="uid://bfl6x6xlqnfpv" path="res://Assets/Audio/sword_parry.wav" id="5_wt4eq"]
+[ext_resource type="AudioStream" uid="uid://bjdbrrk8yngxp" path="res://Assets/Audio/sword1_swing.wav" id="6_12sey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_612jg"]
+size = Vector2(27.23029, 35.694763)
+
+[node name="Sword" type="Node2D" unique_id=1833184451]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_msmms")
+damage = 16.0
+attack_duration = 0.5
+idle_texture = ExtResource("2_2l8qd")
+slash_texture = ExtResource("3_2l8qd")
+damage_number_scene = ExtResource("4_djpvx")
+display_texture = ExtResource("2_2l8qd")
+energy_cost = 4.0
+fire_rate = 2.0
+weapon_type = 5
+rarity = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=787717671]
+position = Vector2(8, 0)
+texture = ExtResource("2_skre5")
+
+[node name="SlashSprite" type="Sprite2D" parent="." unique_id=1806595470]
+position = Vector2(11, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2l8qd")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2053860366]
+scale = Vector2(1.7076572, 1.7509571)
+collision_layer = 4
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=242441516]
+position = Vector2(14.200743, 0.7138961)
+shape = SubResource("RectangleShape2D_612jg")
+
+[node name="DeflectSound" type="AudioStreamPlayer2D" parent="." unique_id=327478385]
+stream = ExtResource("5_wt4eq")
+volume_db = -10.0
+
+[node name="SwingSound" type="AudioStreamPlayer2D" parent="." unique_id=2086870041]
+stream = ExtResource("6_12sey")
+volume_db = -10.0
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hit"]

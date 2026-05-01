@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponTypeRelic" format=3 uid="uid://ba2lm0hu7lanv"]
+
+[ext_resource type="Texture2D" uid="uid://dbvvcdkbmje32" path="res://Assets/Sprites/damagedrevolvercylinder.png" id="1_ejg17"]
+[ext_resource type="Script" uid="uid://i6qhiyp34vti" path="res://Scripts/Relics/Base/weaponsome.gd" id="1_lc26c"]
+
+[resource]
+script = ExtResource("1_lc26c")
+weapon_types = Array[int]([0])
+damage_multiplier = 1.35
+relic_name = "Damaged Revolver Cylinder"
+description = "+35% Pistol DMG"
+rarity = 2
+icon = ExtResource("1_ejg17")
+metadata/_custom_type_script = "uid://i6qhiyp34vti"

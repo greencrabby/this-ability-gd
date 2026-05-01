@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://crd4asyxbcyln"]
+
+[ext_resource type="Script" uid="uid://sojl6fcx3ofe" path="res://Scripts/System/chest.gd" id="1_ki5eb"]
+[ext_resource type="Texture2D" uid="uid://c8ru5uhpe83ig" path="res://Assets/Sprites/commonchest.png" id="2_17gyx"]
+[ext_resource type="PackedScene" uid="uid://cuw1ogopqtcc6" path="res://Scenes/Weaponry/WeaponPickup.tscn" id="2_folpl"]
+[ext_resource type="PackedScene" uid="uid://bdne5f8u375rk" path="res://Scenes/Relics/RelicPickup.tscn" id="3_f1lq7"]
+[ext_resource type="Texture2D" uid="uid://cgyhv85e0j7tm" path="res://Assets/Sprites/rarechest.png" id="3_x1wga"]
+[ext_resource type="Texture2D" uid="uid://dssysdfbd3s7w" path="res://Assets/Sprites/rarerchest.png" id="4_3231b"]
+[ext_resource type="PackedScene" uid="uid://bquax0tmnw4fa" path="res://Scenes/World/PotionPickup.tscn" id="7_1w2it"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="7_x1wga"]
+[ext_resource type="PackedScene" uid="uid://d3y1tfuou5ylr" path="res://Scenes/Weaponry/BasicSMG.tscn" id="8_ggp01"]
+[ext_resource type="PackedScene" uid="uid://dxqlcdofae5rr" path="res://Scenes/Weaponry/BasicShotgun.tscn" id="9_1w2it"]
+[ext_resource type="PackedScene" uid="uid://cduuediwxcxxr" path="res://Scenes/Weaponry/Sword.tscn" id="10_svjx8"]
+[ext_resource type="PackedScene" uid="uid://bam4b8kppjlbr" path="res://Scenes/Weaponry/BouncingBasicShotgun.tscn" id="11_wbnyd"]
+[ext_resource type="PackedScene" uid="uid://cvhpr0wi4u2mg" path="res://Scenes/Weaponry/T2BouncingShotgun.tscn" id="13_6mkgr"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="13_wbnyd"]
+[ext_resource type="Resource" uid="uid://niav5h6c4no5" path="res://Scripts/Relics/Actual/GoldenChalice.tres" id="14_5foiv"]
+[ext_resource type="PackedScene" uid="uid://bggvjk7tk4ome" path="res://Scenes/Weaponry/DoubleBarrel.tscn" id="14_phema"]
+[ext_resource type="Resource" uid="uid://bgnejnpb1jbgp" path="res://Scripts/Relics/Actual/Desperado.tres" id="15_ethgq"]
+[ext_resource type="PackedScene" uid="uid://donu4dwb60a26" path="res://Scenes/Weaponry/Revolver.tscn" id="15_n56re"]
+[ext_resource type="PackedScene" uid="uid://cpgrx2kfr7o15" path="res://Scenes/Weaponry/Tec9.tscn" id="16_ca605"]
+[ext_resource type="Resource" uid="uid://1eafae28tq6h" path="res://Scripts/Relics/Actual/LifeStone.tres" id="16_q38vj"]
+[ext_resource type="PackedScene" uid="uid://b0dc81vjouxbj" path="res://Scenes/Weaponry/AutoShotgun.tscn" id="17_jfp8k"]
+[ext_resource type="Resource" uid="uid://dk2io8svufrnv" path="res://Scripts/Relics/Actual/Investment.tres" id="17_n4h2r"]
+[ext_resource type="Resource" uid="uid://bm02oa1xjoxhl" path="res://Scripts/Relics/Actual/LifeCrystal.tres" id="18_0d4vu"]
+[ext_resource type="PackedScene" uid="uid://5uj4dv208hqf" path="res://Scenes/Weaponry/BouncingPistol.tscn" id="18_lr1fv"]
+[ext_resource type="Resource" uid="uid://bxdpi415gnt52" path="res://Scripts/Relics/Actual/FancyMonocle.tres" id="19_cem70"]
+[ext_resource type="PackedScene" uid="uid://drackfv2be4t" path="res://Scenes/Weaponry/T2BouncingPistol.tscn" id="19_lr1fv"]
+[ext_resource type="Resource" uid="uid://cmsn1aqwrbkpb" path="res://Scripts/Relics/Actual/ItaliansWrath.tres" id="20_dv4qp"]
+[ext_resource type="PackedScene" uid="uid://c4lhl8wn8of3n" path="res://Scenes/Weaponry/Mac10.tscn" id="20_jhp10"]
+[ext_resource type="PackedScene" uid="uid://hmmw447jlkua" path="res://Scenes/Weaponry/KrissVector.tscn" id="21_ckc7q"]
+[ext_resource type="Resource" uid="uid://hop7qbe1snsf" path="res://Scripts/Relics/Actual/SeaConch.tres" id="21_r2370"]
+[ext_resource type="Resource" uid="uid://bpk4v2x7qperf" path="res://Scripts/Relics/Actual/MealVoucher.tres" id="22_6mkgr"]
+[ext_resource type="PackedScene" uid="uid://x5t64fdfytss" path="res://Scenes/Weaponry/T2BouncingSMG.tscn" id="22_tn4is"]
+[ext_resource type="Resource" uid="uid://cowsfk7msgkxt" path="res://Scripts/Relics/Actual/OrangeStorm.tres" id="23_phema"]
+[ext_resource type="PackedScene" uid="uid://t1uumkxnfb5m" path="res://Scenes/Weaponry/FireAxe.tscn" id="23_ymf74"]
+[ext_resource type="PackedScene" uid="uid://dp3rneabhvowc" path="res://Scenes/Weaponry/Pickaxe.tscn" id="24_j7eah"]
+[ext_resource type="Resource" uid="uid://ipl01r7eslxu" path="res://Scripts/Relics/Actual/SeaweedSalad.tres" id="24_n56re"]
+[ext_resource type="Resource" uid="uid://cjalh5dmtbg0x" path="res://Scripts/Relics/Actual/AssortedFruits.tres" id="25_ca605"]
+[ext_resource type="PackedScene" uid="uid://bgea5ryj053vp" path="res://Scenes/Weaponry/DiamondPickaxe.tscn" id="25_j7eah"]
+[ext_resource type="Resource" uid="uid://c6dnego4hkpqx" path="res://Scripts/Relics/Actual/ProofOfLongevity.tres" id="26_gen78"]
+[ext_resource type="Resource" uid="uid://cijgmh1ptqg1w" path="res://Scripts/Relics/Actual/VampiresNecklace.tres" id="27_jfp8k"]
+[ext_resource type="Resource" uid="uid://dmn04m236hpwd" path="res://Scripts/Relics/Actual/VanguardsHalberd.tres" id="28_lr1fv"]
+[ext_resource type="Resource" uid="uid://ba2lm0hu7lanv" path="res://Scripts/Relics/Actual/DamagedRevolverCylinder.tres" id="29_jhp10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38s1y"]
+
+[node name="Chest" type="Node2D" unique_id=371398630]
+script = ExtResource("1_ki5eb")
+common_texture = ExtResource("2_17gyx")
+rare_texture = ExtResource("3_x1wga")
+rarer_texture = ExtResource("4_3231b")
+weapon_pickup_scene = ExtResource("2_folpl")
+relic_pickup_scene = ExtResource("3_f1lq7")
+potion_pickup_scene = ExtResource("7_1w2it")
+weapon_pool = Array[PackedScene]([ExtResource("7_x1wga"), ExtResource("8_ggp01"), ExtResource("9_1w2it"), ExtResource("11_wbnyd"), ExtResource("10_svjx8"), ExtResource("13_6mkgr"), ExtResource("14_phema"), ExtResource("15_n56re"), ExtResource("16_ca605"), ExtResource("17_jfp8k"), ExtResource("18_lr1fv"), ExtResource("19_lr1fv"), ExtResource("20_jhp10"), ExtResource("21_ckc7q"), ExtResource("22_tn4is"), ExtResource("23_ymf74"), ExtResource("24_j7eah"), ExtResource("25_j7eah")])
+relic_pool = Array[ExtResource("13_wbnyd")]([ExtResource("14_5foiv"), ExtResource("15_ethgq"), ExtResource("16_q38vj"), ExtResource("17_n4h2r"), ExtResource("18_0d4vu"), ExtResource("19_cem70"), ExtResource("20_dv4qp"), ExtResource("21_r2370"), ExtResource("22_6mkgr"), ExtResource("23_phema"), ExtResource("24_n56re"), ExtResource("25_ca605"), ExtResource("26_gen78"), ExtResource("27_jfp8k"), ExtResource("28_lr1fv"), ExtResource("29_jhp10")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=800642399]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=605747853]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=553527833]
+shape = SubResource("CircleShape2D_38s1y")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_entered"]

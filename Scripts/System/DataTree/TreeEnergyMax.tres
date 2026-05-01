@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://dokvg8auxcf45"]
+
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_6uuwm"]
+[ext_resource type="Resource" uid="uid://do00ejqpiessp" path="res://Scripts/Relics/Actual/SkillTreeRelics/TreeEnergyMax.tres" id="1_f4bhi"]
+
+[resource]
+script = ExtResource("1_6uuwm")
+skill_name = "+100 Max Energy"
+cost = 10
+associated_relic = ExtResource("1_f4bhi")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"

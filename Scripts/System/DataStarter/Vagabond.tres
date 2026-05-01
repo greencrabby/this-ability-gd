@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StarterPack" format=3 uid="uid://cwjq6rxnpo7x1"]
+
+[ext_resource type="Texture2D" uid="uid://xg1u0gq8qasr" path="res://Assets/Sprites/vagabond.png" id="1_6lybn"]
+[ext_resource type="Script" uid="uid://bpvwcdh3ir0s" path="res://Scripts/System/starter_pack.gd" id="2_6mbsi"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="3_kb2se"]
+[ext_resource type="Resource" uid="uid://dy2kf42ure4rp" path="res://Scripts/Relics/Actual/StarterPackRelics/MeleeStarter.tres" id="4_fqxbp"]
+[ext_resource type="PackedScene" uid="uid://cduuediwxcxxr" path="res://Scenes/Weaponry/Sword.tscn" id="5_v1ni3"]
+[ext_resource type="Resource" uid="uid://dl8wigwd1u84c" path="res://Scripts/System/DataTree/TreeVagabond.tres" id="6_0ll2e"]
+
+[resource]
+script = ExtResource("2_6mbsi")
+pack_name = "Vagabond"
+description = "+50% Melee DMG, -50% Gun DMG"
+starting_weapon = ExtResource("5_v1ni3")
+starting_relics = Array[ExtResource("3_kb2se")]([ExtResource("4_fqxbp")])
+icon = ExtResource("1_6lybn")
+unlocking_skill = ExtResource("6_0ll2e")
+metadata/_custom_type_script = "uid://bpvwcdh3ir0s"

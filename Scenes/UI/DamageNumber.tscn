@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dfwgr7td5mclo"]
+
+[ext_resource type="Script" uid="uid://cy5j670ul6o1f" path="res://Scripts/UI/damage_number.gd" id="1_ksswl"]
+
+[node name="DamageNumber" type="Node2D" unique_id=803389002]
+script = ExtResource("1_ksswl")
+
+[node name="Label" type="Label" parent="." unique_id=745193961]
+modulate = Color(1, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "placeholder"
+horizontal_alignment = 1

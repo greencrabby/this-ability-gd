@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponRelic" format=3 uid="uid://cmsn1aqwrbkpb"]
+
+[ext_resource type="Texture2D" uid="uid://dq4h1nkinil82" path="res://Assets/Sprites/italianwrath.png" id="1_hled1"]
+[ext_resource type="Script" uid="uid://cfou5v2seod4f" path="res://Scripts/Relics/Base/weaponall.gd" id="1_nnqrn"]
+
+[resource]
+script = ExtResource("1_nnqrn")
+damage_multiplier = 1.2
+relic_name = "Italian's Wrath"
+description = "+20% DMG"
+rarity = 1
+icon = ExtResource("1_hled1")
+metadata/_custom_type_script = "uid://cfou5v2seod4f"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoneyDamageRelic" format=3 uid="uid://niav5h6c4no5"]
+
+[ext_resource type="Script" uid="uid://bls7vyhfw845" path="res://Scripts/Relics/Base/chalice.gd" id="1_ejcdy"]
+[ext_resource type="Texture2D" uid="uid://hfipubtpjp6g" path="res://Assets/Sprites/goldenchalice.png" id="1_nkhs8"]
+
+[resource]
+script = ExtResource("1_ejcdy")
+scaling_damage = 0.0
+scaling_firerate = 0.1
+relic_name = "Golden Chalice"
+description = "1 firerate ~ 10 money"
+rarity = 2
+icon = ExtResource("1_nkhs8")
+metadata/_custom_type_script = "uid://bls7vyhfw845"

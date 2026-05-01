@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://c8orjxyyaj203"]
+
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_rbleb"]
+[ext_resource type="Resource" uid="uid://dcjvy3ep7ov5s" path="res://Scripts/System/DataTree/TreeDMG.tres" id="1_ux1ms"]
+
+[resource]
+script = ExtResource("1_rbleb")
+skill_name = "Unlocks Artillerist"
+cost = 50
+prerequisite = ExtResource("1_ux1ms")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"

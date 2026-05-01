@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://bol2wdon8qh0h"]
+
+[ext_resource type="PackedScene" uid="uid://dvuhkwp8ukrfy" path="res://Scenes/World/F1/F1BossStage.tscn" id="1_irlue"]
+[ext_resource type="Script" uid="uid://dgi6y6mayuv8x" path="res://Scripts/World/floor_config.gd" id="1_xs3fx"]
+[ext_resource type="Script" uid="uid://bydufsyufe75d" path="res://Scripts/World/level_config.gd" id="2_8poo5"]
+[ext_resource type="PackedScene" uid="uid://c11b3psex6f4e" path="res://Scenes/World/F1/F1TicketPlease.tscn" id="2_878mm"]
+[ext_resource type="PackedScene" uid="uid://dm2ut0hdv5r7y" path="res://Scenes/World/F1/F1SeriousBusiness.tscn" id="3_h5mq1"]
+[ext_resource type="Resource" uid="uid://b3cdwvso2rrjs" path="res://Scripts/World/Data/l1floor2.tres" id="3_sp4co"]
+[ext_resource type="Resource" uid="uid://bofvmtkdwtx10" path="res://Scripts/World/Data/l1floor3.tres" id="4_0oklp"]
+[ext_resource type="PackedScene" uid="uid://mfk3a01vcg6d" path="res://Scenes/World/F1/F1WhackAMole.tscn" id="4_h5mq1"]
+[ext_resource type="PackedScene" uid="uid://b81wrbrpte5s3" path="res://Scenes/World/F1/F1Encounter.tscn" id="4_irlue"]
+[ext_resource type="Resource" uid="uid://cmv8p8nqgkjdf" path="res://Scripts/World/Data/l1floor1.tres" id="5_h1peo"]
+[ext_resource type="PackedScene" uid="uid://pkvtm3h0l6sd" path="res://Scenes/World/F1/F1VeteranActor.tscn" id="5_irlue"]
+[ext_resource type="Resource" uid="uid://bemi56jekmnxa" path="res://Scripts/World/Data/l1floor4.tres" id="5_sfu6x"]
+[ext_resource type="PackedScene" uid="uid://j8e0ws1jbscs" path="res://Scenes/World/F1/F1Shop.tscn" id="11_oxcsq"]
+
+[resource]
+script = ExtResource("2_8poo5")
+floor_configs = Array[ExtResource("1_xs3fx")]([ExtResource("5_h1peo"), ExtResource("3_sp4co"), ExtResource("4_0oklp"), ExtResource("5_sfu6x")])
+combat_scenes = Array[PackedScene]([ExtResource("2_878mm"), ExtResource("3_h5mq1"), ExtResource("4_h5mq1"), ExtResource("5_irlue")])
+encounter_scenes = Array[PackedScene]([ExtResource("4_irlue")])
+shop_scene = ExtResource("11_oxcsq")
+boss_scene = ExtResource("1_irlue")
+max_total_duels = 0
+metadata/_custom_type_script = "uid://bydufsyufe75d"

@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://ciwvmbc0013ol"]
+
+[ext_resource type="Script" uid="uid://kafkgldusr00" path="res://Scripts/UI/skill_tree.gd" id="1_4nqe7"]
+[ext_resource type="Script" uid="uid://u8m6dav8ff58" path="res://Scripts/UI/lines_container.gd" id="2_0oiwb"]
+[ext_resource type="Texture2D" uid="uid://5joymr032ejh" path="res://Assets/Sprites/mambo.jpg" id="2_eqvb6"]
+[ext_resource type="PackedScene" uid="uid://beqic3ngvbqol" path="res://Scenes/UI/SkillNode.tscn" id="3_vsj48"]
+[ext_resource type="Resource" uid="uid://dokvg8auxcf45" path="res://Scripts/System/DataTree/TreeEnergyMax.tres" id="5_r3l10"]
+[ext_resource type="Resource" uid="uid://dcjvy3ep7ov5s" path="res://Scripts/System/DataTree/TreeDMG.tres" id="6_3w1o7"]
+[ext_resource type="Resource" uid="uid://bvq548pde8rqf" path="res://Scripts/System/DataTree/TreeEnergyRegen.tres" id="7_rya80"]
+[ext_resource type="Resource" uid="uid://c8orjxyyaj203" path="res://Scripts/System/DataTree/TreeArtillerist.tres" id="8_r3l10"]
+[ext_resource type="Resource" uid="uid://dl8wigwd1u84c" path="res://Scripts/System/DataTree/TreeVagabond.tres" id="9_nqqgi"]
+[ext_resource type="Resource" uid="uid://6mbl4qp70gw6" path="res://Scripts/System/DataTree/TreeFirerate.tres" id="10_nqqgi"]
+[ext_resource type="Resource" uid="uid://cq0glmnkk4kl" path="res://Scripts/System/DataTree/TreeSigma.tres" id="11_ewhlj"]
+
+[node name="SkillTree" type="Control" unique_id=96251378]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4nqe7")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=507830195]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+texture = ExtResource("2_eqvb6")
+
+[node name="Header" type="MarginContainer" parent="." unique_id=944560273]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.0
+offset_right = 74.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Header" unique_id=168368401]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Header/VBoxContainer" unique_id=1893632863]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Skill Tree Upgrades"
+
+[node name="PointsLabel" type="Label" parent="Header/VBoxContainer" unique_id=545115464]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=356110786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="ZoomContainer" type="Control" parent="ScrollContainer" unique_id=1608133942]
+layout_mode = 2
+
+[node name="LinesContainer" type="Control" parent="ScrollContainer/ZoomContainer" unique_id=1561390582]
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("2_0oiwb")
+
+[node name="ButtonsContainer" type="Control" parent="ScrollContainer/ZoomContainer" unique_id=1921134651]
+anchors_preset = 0
+
+[node name="Button" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=974417658 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 552.0
+offset_right = 607.0
+offset_bottom = 602.0
+skill_data = ExtResource("5_r3l10")
+
+[node name="Button2" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=367987371 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 457.0
+offset_right = 479.0
+offset_bottom = 507.0
+skill_data = ExtResource("6_3w1o7")
+
+[node name="Button3" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=1179478821 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 460.0
+offset_right = 757.0
+offset_bottom = 510.0
+skill_data = ExtResource("7_rya80")
+
+[node name="Button4" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=1009242572 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 273.0
+offset_right = 465.0
+offset_bottom = 323.0
+skill_data = ExtResource("8_r3l10")
+
+[node name="Button5" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=1941868958 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 273.0
+offset_right = 753.0
+offset_bottom = 323.0
+skill_data = ExtResource("9_nqqgi")
+
+[node name="Button6" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=731354101 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 473.0
+offset_right = 258.0
+offset_bottom = 523.0
+skill_data = ExtResource("10_nqqgi")
+
+[node name="Button7" parent="ScrollContainer/ZoomContainer/ButtonsContainer" unique_id=1722342516 instance=ExtResource("3_vsj48")]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 78.0
+offset_right = 888.0
+offset_bottom = 128.0
+skill_data = ExtResource("11_ewhlj")
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=161077589]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="MarginContainer2" unique_id=1485826157]
+layout_mode = 2
+text = "Return
+"
+
+[connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://cq0glmnkk4kl"]
+
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_hvgs4"]
+[ext_resource type="Resource" uid="uid://dl8wigwd1u84c" path="res://Scripts/System/DataTree/TreeVagabond.tres" id="1_yeqtj"]
+
+[resource]
+script = ExtResource("1_hvgs4")
+skill_name = "Unlocks Sigma"
+cost = 10000
+prerequisite = ExtResource("1_yeqtj")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"

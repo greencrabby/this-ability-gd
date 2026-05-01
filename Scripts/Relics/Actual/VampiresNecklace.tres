@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HealthRelic" format=3 uid="uid://cijgmh1ptqg1w"]
+
+[ext_resource type="Texture2D" uid="uid://dxtgwsscypq8t" path="res://Assets/Sprites/vampiresnecklace.png" id="1_0crif"]
+[ext_resource type="Script" uid="uid://cibeojvrcw7p7" path="res://Scripts/Relics/Base/health.gd" id="1_exhe8"]
+
+[resource]
+script = ExtResource("1_exhe8")
+flat_bonus = 40.0
+percent_bonus = 0.4
+relic_name = "Vampire's Necklace"
+description = "+40 Max HP, +4% Max HP"
+rarity = 1
+icon = ExtResource("1_0crif")
+metadata/_custom_type_script = "uid://cibeojvrcw7p7"

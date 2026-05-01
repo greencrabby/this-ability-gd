@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MoneyRelic" format=3 uid="uid://deixgihhxk0ex"]
+
+[ext_resource type="Script" uid="uid://d1hlx865te2nk" path="res://Scripts/Relics/Base/money.gd" id="1_wihoe"]
+
+[resource]
+script = ExtResource("1_wihoe")
+multiplier = 1.1
+relic_name = "Survival Starter"
+rarity = 3
+metadata/_custom_type_script = "uid://d1hlx865te2nk"

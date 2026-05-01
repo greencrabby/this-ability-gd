@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bn2wn50mwtbyg"]
+
+[ext_resource type="Script" uid="uid://bhq8rdnthcj7i" path="res://Scripts/Entities/bean.gd" id="1_q2q5u"]
+[ext_resource type="Texture2D" uid="uid://dbx3ultmqcs75" path="res://Assets/Maps and Sheets/pixilart-sprite.png" id="2_hsddl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71rr2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g0rnc"]
+radius = 17.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljggw"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nyx4"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxppu"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taks2"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc48j"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihupy"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d22x"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reaxh"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygdtc"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yp7x"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(400, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ggfa"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(450, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftjqv"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(500, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efbug"]
+atlas = ExtResource("2_hsddl")
+region = Rect2(550, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ybnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljggw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nyx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxppu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taks2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc48j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihupy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d22x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reaxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygdtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yp7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ggfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftjqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efbug")
+}],
+"loop": true,
+"name": &"move",
+"speed": 24.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=569957952]
+collision_mask = 10
+script = ExtResource("1_q2q5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1559512228 groups=["player"]]
+shape = SubResource("CapsuleShape2D_71rr2")
+
+[node name="WeaponPivot" type="Node2D" parent="." unique_id=1196409954]
+position = Vector2(10, 0)
+
+[node name="WeaponSlot" type="Node2D" parent="WeaponPivot" unique_id=172358301]
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1111591087]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1779850170]
+shape = SubResource("CircleShape2D_g0rnc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=876315163]
+zoom = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1746186755]
+sprite_frames = SubResource("SpriteFrames_2ybnv")
+animation = &"idle"
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_area_entered"]

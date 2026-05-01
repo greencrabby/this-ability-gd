@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dx1cm7co7v3gd"]
+
+[ext_resource type="Script" uid="uid://dluewfq37r66c" path="res://Scripts/UI/main_menu.gd" id="1_g18y6"]
+[ext_resource type="Texture2D" uid="uid://br2s0oxthy60q" path="res://Assets/Sprites/lemon.png" id="2_mjmdf"]
+
+[node name="Control" type="Control" unique_id=399844209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g18y6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=67213243]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("2_mjmdf")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1293599516]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -79.0
+offset_right = 169.0
+offset_bottom = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=812755667]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1500325332]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 64
+text = "This Ability"
+
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=124368776]
+layout_mode = 2
+text = "Start Run"
+
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1469876490]
+layout_mode = 2
+text = "Skill Tree"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_pressed"]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ba051xtlfftl"]
+
+[ext_resource type="Script" uid="uid://dqvx7rgmlh023" path="res://Scripts/Entities/boss1.gd" id="1_v05b7"]
+[ext_resource type="Texture2D" uid="uid://ch2haw3l4hpwn" path="res://Assets/Sprites/boss1p2.png" id="2_1irh0"]
+[ext_resource type="Script" uid="uid://cipit3fmxu3lh" path="res://Scripts/System/pattern_shotgun_shot.gd" id="2_xqd4u"]
+[ext_resource type="PackedScene" uid="uid://cpn5jrxn5esnj" path="res://Scenes/Weaponry/NormalBullet.tscn" id="4_dykk7"]
+[ext_resource type="Texture2D" uid="uid://ndpti50qrvtn" path="res://Assets/Sprites/EvilBullet.png" id="5_1irh0"]
+[ext_resource type="Script" uid="uid://dhyq7cljqjjq4" path="res://Scripts/System/pattern_radial_shot.gd" id="5_dykk7"]
+[ext_resource type="Texture2D" uid="uid://bp8a0ufcpdy43" path="res://Assets/Sprites/boss1.png" id="6_dykk7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw6y8"]
+radius = 17.0
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovo8n"]
+radius = 15.0
+height = 50.0
+
+[node name="F1Boss" type="CharacterBody2D" unique_id=797738605]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_v05b7")
+phase_2_threshold = 0.3
+phase_2_texture = ExtResource("2_1irh0")
+normal_bullet_speed = 150.0
+strong_bullet_speed = 200.0
+max_health = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=776155668]
+shape = SubResource("CapsuleShape2D_dw6y8")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1603028039]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=99216874]
+shape = SubResource("CapsuleShape2D_ovo8n")
+
+[node name="FirePattern1" type="Node2D" parent="." unique_id=32966167]
+script = ExtResource("2_xqd4u")
+bullet_scene = ExtResource("4_dykk7")
+bullet_texture = ExtResource("5_1irh0")
+bullet_speed = 100.0
+
+[node name="FirePattern2" type="Node2D" parent="." unique_id=60873292]
+script = ExtResource("5_dykk7")
+bullet_scene = ExtResource("4_dykk7")
+bullet_texture = ExtResource("5_1irh0")
+bullet_speed = 100.0
+
+[node name="BulletSpawn" type="Marker2D" parent="." unique_id=519566310]
+position = Vector2(5.5, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1478686786]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_dykk7")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hit"]

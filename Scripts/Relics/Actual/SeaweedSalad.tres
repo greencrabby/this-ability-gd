@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponTypeRelic" format=3 uid="uid://ipl01r7eslxu"]
+
+[ext_resource type="Script" uid="uid://i6qhiyp34vti" path="res://Scripts/Relics/Base/weaponsome.gd" id="1_aky44"]
+[ext_resource type="Texture2D" uid="uid://be8pylpcxmc37" path="res://Assets/Sprites/seaweedsalad.png" id="1_m0b47"]
+
+[resource]
+script = ExtResource("1_aky44")
+weapon_types = Array[int]([5])
+damage_multiplier = 1.002
+relic_name = "Seaweed Salad"
+description = "+2% Melee DMG"
+icon = ExtResource("1_m0b47")
+metadata/_custom_type_script = "uid://i6qhiyp34vti"

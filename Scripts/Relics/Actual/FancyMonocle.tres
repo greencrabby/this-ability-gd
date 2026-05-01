@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MoneyDamageRelic" format=3 uid="uid://bxdpi415gnt52"]
+
+[ext_resource type="Texture2D" uid="uid://cnt1rkrcamj3x" path="res://Assets/Sprites/fancymonocle.png" id="1_bwkkr"]
+[ext_resource type="Script" uid="uid://bls7vyhfw845" path="res://Scripts/Relics/Base/chalice.gd" id="1_kdxm8"]
+
+[resource]
+script = ExtResource("1_kdxm8")
+scaling_damage = 0.1
+scaling_firerate = 0.0
+relic_name = "Fancy Monocle"
+description = "+1 DMG ~ 10 Money"
+rarity = 2
+icon = ExtResource("1_bwkkr")
+metadata/_custom_type_script = "uid://bls7vyhfw845"

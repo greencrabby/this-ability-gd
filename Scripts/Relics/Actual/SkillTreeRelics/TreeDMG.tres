@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponRelic" format=3 uid="uid://ca7baahbv5nfq"]
+
+[ext_resource type="Script" uid="uid://cfou5v2seod4f" path="res://Scripts/Relics/Base/weaponall.gd" id="1_bevlj"]
+
+[resource]
+script = ExtResource("1_bevlj")
+damage_multiplier = 1.1
+relic_name = "Tree DMG"
+rarity = 3
+metadata/_custom_type_script = "uid://cfou5v2seod4f"

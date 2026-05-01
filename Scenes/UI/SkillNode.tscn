@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://beqic3ngvbqol"]
+
+[ext_resource type="Script" uid="uid://cdw53j6fxfuu7" path="res://Scripts/UI/skill_node_ui.gd" id="1_d14uw"]
+
+[node name="Button" type="Button" unique_id=1179478821]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_d14uw")
+
+[node name="Label" type="Label" parent="." unique_id=1724373661]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

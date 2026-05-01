@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://q0upnonrh6y0"]
+
+[ext_resource type="PackedScene" uid="uid://bn2wn50mwtbyg" path="res://Scenes/Player/Bean.tscn" id="1_gtapu"]
+
+[node name="Node2D" type="Node2D" unique_id=1218718468]
+
+[node name="CharacterBody2D" parent="." unique_id=569957952 instance=ExtResource("1_gtapu")]

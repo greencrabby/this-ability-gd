@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DualWeaponRelic" format=3 uid="uid://bgnejnpb1jbgp"]
+
+[ext_resource type="Texture2D" uid="uid://dw0keuyfefp3b" path="res://Assets/Sprites/desperado.png" id="1_4e48i"]
+[ext_resource type="Script" uid="uid://covvixpo7agan" path="res://Scripts/Relics/Base/dualweapon.gd" id="1_se263"]
+
+[resource]
+script = ExtResource("1_se263")
+buffed_types = Array[int]([0, 1, 2, 3, 4])
+nerfed_types = Array[int]([5])
+buff_damage_mult = 2.0
+nerf_damage_mult = 0.5
+relic_name = "Desperado"
+description = "+100% Firearms DMG, -50% Melee DMG"
+rarity = 2
+icon = ExtResource("1_4e48i")
+metadata/_custom_type_script = "uid://covvixpo7agan"

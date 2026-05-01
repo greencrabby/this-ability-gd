@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://440cabv2vetm"]
+
+[ext_resource type="Script" uid="uid://ba8tu1yrcdse6" path="res://Scripts/World/main.gd" id="1_4narx"]
+[ext_resource type="Script" uid="uid://bfec7yyc5geqt" path="res://Scripts/World/map_manager.gd" id="1_myw4e"]
+[ext_resource type="Script" uid="uid://bognd4ya37877" path="res://Scripts/World/map_generator.gd" id="3_jl77m"]
+[ext_resource type="PackedScene" uid="uid://l2l4t0r5vbsv" path="res://Scenes/World/MapNode.tscn" id="4_jl77m"]
+[ext_resource type="Resource" uid="uid://bol2wdon8qh0h" path="res://Scripts/World/Data/level1.tres" id="5_bm7dg"]
+
+[node name="Main" type="Node2D" unique_id=501967048]
+script = ExtResource("1_4narx")
+
+[node name="MapManager" type="Node2D" parent="." unique_id=1480159982]
+script = ExtResource("1_myw4e")
+
+[node name="MapGenerator" type="Node2D" parent="." unique_id=1558993051]
+script = ExtResource("3_jl77m")
+node_scene = ExtResource("4_jl77m")
+level_config = ExtResource("5_bm7dg")
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=1113824002]
+
+[node name="Camera2D" type="Camera2D" parent="MapContainer" unique_id=416813283]
+
+[node name="StageContainer" type="Node2D" parent="." unique_id=338056170]

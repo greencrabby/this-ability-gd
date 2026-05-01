@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealthRelic" format=3 uid="uid://bm02oa1xjoxhl"]
+
+[ext_resource type="Texture2D" uid="uid://cxkvsc1m4gvw0" path="res://Assets/Sprites/LifeCrystal.png" id="1_hxk0j"]
+[ext_resource type="Script" uid="uid://cibeojvrcw7p7" path="res://Scripts/Relics/Base/health.gd" id="1_x3n4x"]
+
+[resource]
+script = ExtResource("1_x3n4x")
+percent_bonus = 0.1
+relic_name = "Life Crystal"
+description = "+10% HP"
+rarity = 1
+icon = ExtResource("1_hxk0j")
+metadata/_custom_type_script = "uid://cibeojvrcw7p7"

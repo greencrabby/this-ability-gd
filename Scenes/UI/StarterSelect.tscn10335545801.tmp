@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cirtw7eao72ig"]
+
+[ext_resource type="Script" uid="uid://dmvhlfosvu4jl" path="res://starter_select.gd" id="1_4dxna"]
+[ext_resource type="Script" uid="uid://bpvwcdh3ir0s" path="res://Scripts/System/starter_pack.gd" id="2_6c8v8"]
+[ext_resource type="Resource" uid="uid://bx1vmdw5ekcr" path="res://Scripts/System/Data/Survivalist.tres" id="3_7vard"]
+[ext_resource type="Resource" uid="uid://dq76l0t6gp4jr" path="res://Scripts/System/Data/Artillerist.tres" id="4_tuxw4"]
+[ext_resource type="Resource" uid="uid://cwjq6rxnpo7x1" path="res://Scripts/System/Data/Vagabond.tres" id="5_rqnd5"]
+[ext_resource type="PackedScene" uid="uid://bp5ijs0d1y2s2" path="res://Scenes/UI/StarterCard.tscn" id="6_7vard"]
+[ext_resource type="PackedScene" uid="uid://440cabv2vetm" path="res://Scenes/World/Main.tscn" id="7_tuxw4"]
+
+[node name="StarterSelect" type="Control" unique_id=1407108949]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 375.0
+offset_top = 187.0
+offset_right = 375.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4dxna")
+starter_packs = Array[ExtResource("2_6c8v8")]([ExtResource("3_7vard"), ExtResource("4_tuxw4"), ExtResource("5_rqnd5")])
+card_scene = ExtResource("6_7vard")
+game_scene = ExtResource("7_tuxw4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1941173963]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=188373901]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 24
+text = "Choose Your Starter"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=930304495]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1241416707]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1094250497]
+layout_mode = 2
+text = "Start Run"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]

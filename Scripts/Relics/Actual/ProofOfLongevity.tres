@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealthRelic" format=3 uid="uid://c6dnego4hkpqx"]
+
+[ext_resource type="Texture2D" uid="uid://bpbpyt4exi4fj" path="res://Assets/Sprites/proofoflongevity.png" id="1_nv6ji"]
+[ext_resource type="Script" uid="uid://cibeojvrcw7p7" path="res://Scripts/Relics/Base/health.gd" id="1_p8jbx"]
+
+[resource]
+script = ExtResource("1_p8jbx")
+percent_bonus = 0.6
+relic_name = "Proof of Longevity"
+description = "+60% Max HP"
+rarity = 2
+icon = ExtResource("1_nv6ji")
+metadata/_custom_type_script = "uid://cibeojvrcw7p7"

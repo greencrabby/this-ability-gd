@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponTypeRelic" format=3 uid="uid://cowsfk7msgkxt"]
+
+[ext_resource type="Script" uid="uid://i6qhiyp34vti" path="res://Scripts/Relics/Base/weaponsome.gd" id="1_npefl"]
+[ext_resource type="Texture2D" uid="uid://bwdbgeqcbtwtd" path="res://Assets/Sprites/orangestorm.png" id="1_nrafm"]
+
+[resource]
+script = ExtResource("1_npefl")
+weapon_types = Array[int]([0, 1, 2, 3, 4])
+damage_multiplier = 1.002
+relic_name = "Orange Storm"
+description = "+2% Firearms DMG"
+icon = ExtResource("1_nrafm")
+metadata/_custom_type_script = "uid://i6qhiyp34vti"

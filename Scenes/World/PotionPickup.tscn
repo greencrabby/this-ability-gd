@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bquax0tmnw4fa"]
+
+[ext_resource type="Script" uid="uid://dliuddb2jom8a" path="res://Scripts/System/potion_pickup.gd" id="1_eykwg"]
+[ext_resource type="Texture2D" uid="uid://c6cx2vswrbc5p" path="res://Assets/Sprites/smallpot.png" id="2_c6xa8"]
+[ext_resource type="Texture2D" uid="uid://cukhu36443sdo" path="res://Assets/Sprites/largepot.png" id="3_75nq1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mwhf"]
+
+[node name="PotionPickup" type="Area2D" unique_id=672276811]
+collision_layer = 16
+script = ExtResource("1_eykwg")
+small_texture = ExtResource("2_c6xa8")
+large_texture = ExtResource("3_75nq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1360792119]
+texture = ExtResource("2_c6xa8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1298153821]
+shape = SubResource("CircleShape2D_3mwhf")

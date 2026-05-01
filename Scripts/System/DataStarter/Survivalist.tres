@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="StarterPack" format=3 uid="uid://bx1vmdw5ekcr"]
+
+[ext_resource type="Texture2D" uid="uid://cm17dnotatfbr" path="res://Assets/Sprites/survivalist.png" id="1_kpcc1"]
+[ext_resource type="Script" uid="uid://bpvwcdh3ir0s" path="res://Scripts/System/starter_pack.gd" id="2_7c8ol"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="3_kw6bm"]
+[ext_resource type="Resource" uid="uid://deixgihhxk0ex" path="res://Scripts/Relics/Actual/StarterPackRelics/SurvivalStarter.tres" id="4_7c8ol"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="4_l8ffm"]
+
+[resource]
+script = ExtResource("2_7c8ol")
+pack_name = "Survivalist"
+description = "+50 Money, +10% Money Gain"
+starting_weapon = ExtResource("4_l8ffm")
+starting_relics = Array[ExtResource("3_kw6bm")]([ExtResource("4_7c8ol")])
+starting_money = 50
+icon = ExtResource("1_kpcc1")
+metadata/_custom_type_script = "uid://bpvwcdh3ir0s"

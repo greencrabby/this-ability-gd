@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dp2o535k2duq1"]
+
+[ext_resource type="Texture2D" uid="uid://b2yhq1dl2xwpl" path="res://Assets/Sprites/enemycountsprite.png" id="1_x5uor"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=150711430]
+
+[node name="Control" type="Control" parent="." unique_id=1613224675]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=702024495]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 20.0
+offset_right = 679.28033
+offset_bottom = 63.0
+scale = Vector2(1.1877213, 1)
+color = Color(0.33437252, 7.578187e-05, 0.33437008, 1)
+
+[node name="EnemyCounter" type="Label" parent="Control/ColorRect" unique_id=717782509]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+offset_left = 42.097412
+offset_top = 11.0
+offset_right = 131.54741
+offset_bottom = 34.0
+text = "placeholder"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/ColorRect" unique_id=536335405]
+position = Vector2(25.258446, 22)
+scale = Vector2(4.209742, 5)
+texture = ExtResource("1_x5uor")
+
+[node name="ClearMessage" type="Label" parent="Control" unique_id=1807993131]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 269.0
+offset_right = 823.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.9271406, 0.92714083, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 64
+text = "Stage Clear"

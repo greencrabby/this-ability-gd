@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MoneyRelic" format=3 uid="uid://dk2io8svufrnv"]
+
+[ext_resource type="Texture2D" uid="uid://b867ha426cs5x" path="res://Assets/Sprites/investment.png" id="1_s7qvm"]
+[ext_resource type="Script" uid="uid://d1hlx865te2nk" path="res://Scripts/Relics/Base/money.gd" id="1_uh05i"]
+
+[resource]
+script = ExtResource("1_uh05i")
+multiplier = 1.25
+relic_name = "Investment"
+description = "+25% Money Gain"
+rarity = 2
+icon = ExtResource("1_s7qvm")
+metadata/_custom_type_script = "uid://d1hlx865te2nk"

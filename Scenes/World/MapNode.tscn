@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://l2l4t0r5vbsv"]
+
+[ext_resource type="Script" uid="uid://kb17kenp2kh0" path="res://Scripts/World/map_node.gd" id="1_06763"]
+[ext_resource type="Texture2D" uid="uid://cduw0x3xiv4pk" path="res://Assets/Sprites/combatnode.png" id="2_4dedh"]
+[ext_resource type="Texture2D" uid="uid://b5slkbm786u33" path="res://Assets/Sprites/encounternode.png" id="3_02a4d"]
+[ext_resource type="Texture2D" uid="uid://bo2bionsqcw6f" path="res://Assets/Sprites/duelnode.png" id="4_1xhhj"]
+[ext_resource type="Texture2D" uid="uid://doufrr8d344yx" path="res://Assets/Sprites/shopnode.png" id="5_1xhhj"]
+[ext_resource type="Texture2D" uid="uid://bdcorqtl71kms" path="res://Assets/Sprites/bossnode.png" id="6_tqtv7"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_06763"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06763"]
+
+[node name="MapNode" type="Node2D" unique_id=94920311]
+script = ExtResource("1_06763")
+node_type = 1
+combat_texture = ExtResource("2_4dedh")
+encounter_texture = ExtResource("3_02a4d")
+duel_texture = ExtResource("4_1xhhj")
+shop_texture = ExtResource("5_1xhhj")
+boss_texture = ExtResource("6_tqtv7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209850767]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_06763")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1456553997]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=399339207]
+shape = SubResource("RectangleShape2D_06763")

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://8gf1n68r00go"]
+
+[ext_resource type="Script" uid="uid://b1hmq8gdqw6ur" path="res://Scripts/System/shop_item.gd" id="1_o4s7b"]
+[ext_resource type="Texture2D" uid="uid://u1wvt4locyqu" path="res://Assets/Sprites/Coin.png" id="2_p20ku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p20ku"]
+
+[node name="ShopItem" type="Node2D" unique_id=1547099666]
+script = ExtResource("1_o4s7b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=700346563]
+
+[node name="CoinSprite" type="Sprite2D" parent="." unique_id=1242803525]
+position = Vector2(-5, -16)
+texture = ExtResource("2_p20ku")
+
+[node name="Label" type="Label" parent="." unique_id=1026247069]
+offset_top = -23.0
+offset_right = 40.0
+theme_override_font_sizes/font_size = 8
+text = "placeholder"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1251491213]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=424043764]
+shape = SubResource("CircleShape2D_p20ku")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_exited"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponTypeRelic" format=3 uid="uid://dmn04m236hpwd"]
+
+[ext_resource type="Texture2D" uid="uid://dykhs3ihajpuo" path="res://Assets/Sprites/vanguardshalberd.png" id="1_n88oc"]
+[ext_resource type="Script" uid="uid://i6qhiyp34vti" path="res://Scripts/Relics/Base/weaponsome.gd" id="1_rrbnt"]
+
+[resource]
+script = ExtResource("1_rrbnt")
+weapon_types = Array[int]([5])
+damage_multiplier = 1.35
+relic_name = "Vanguard's Halberd"
+description = "+35% Melee DMG"
+rarity = 2
+icon = ExtResource("1_n88oc")
+metadata/_custom_type_script = "uid://i6qhiyp34vti"

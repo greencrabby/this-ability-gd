@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="FloorConfig" format=3 uid="uid://cmv8p8nqgkjdf"]
+
+[ext_resource type="Script" uid="uid://dgi6y6mayuv8x" path="res://Scripts/World/floor_config.gd" id="1_ypf4s"]
+
+[resource]
+script = ExtResource("1_ypf4s")
+min_nodes = 1
+max_nodes = 2
+combat_weight = 100
+encounter_weight = 0
+duel_weight = 0
+max_duel_nodes = 0
+max_encounter_nodes = 0
+metadata/_custom_type_script = "uid://dgi6y6mayuv8x"

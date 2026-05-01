@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StarterPack" format=3 uid="uid://bcga5w7nqra6"]
+
+[ext_resource type="Texture2D" uid="uid://rloryc7ntjj8" path="res://Assets/Sprites/sigma.png" id="1_d8ebv"]
+[ext_resource type="Script" uid="uid://bpvwcdh3ir0s" path="res://Scripts/System/starter_pack.gd" id="1_uxbps"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="2_yd3o2"]
+[ext_resource type="Resource" uid="uid://bvw7l8imv8qmj" path="res://Scripts/Relics/Actual/StarterPackRelics/StarterSigma.tres" id="3_0be8m"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="4_d8ebv"]
+[ext_resource type="Resource" uid="uid://cq0glmnkk4kl" path="res://Scripts/System/DataTree/TreeSigma.tres" id="6_mroko"]
+
+[resource]
+script = ExtResource("1_uxbps")
+pack_name = "Sigma"
+description = "Now you have become death, destroyer of worlds."
+starting_weapon = ExtResource("4_d8ebv")
+starting_relics = Array[ExtResource("2_yd3o2")]([ExtResource("3_0be8m")])
+icon = ExtResource("1_d8ebv")
+unlocking_skill = ExtResource("6_mroko")
+metadata/_custom_type_script = "uid://bpvwcdh3ir0s"

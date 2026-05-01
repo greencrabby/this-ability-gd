@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://dl8wigwd1u84c"]
+
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_j2r3s"]
+[ext_resource type="Resource" uid="uid://bvq548pde8rqf" path="res://Scripts/System/DataTree/TreeEnergyRegen.tres" id="1_s1vra"]
+
+[resource]
+script = ExtResource("1_j2r3s")
+skill_name = "Unlocks Vagabond"
+cost = 50
+prerequisite = ExtResource("1_s1vra")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"

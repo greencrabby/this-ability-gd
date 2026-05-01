@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillNode" format=3 uid="uid://dcjvy3ep7ov5s"]
+
+[ext_resource type="Script" uid="uid://bp7b0y3cuj2vr" path="res://Scripts/System/skill_resource.gd" id="1_2qxb8"]
+[ext_resource type="Resource" uid="uid://ca7baahbv5nfq" path="res://Scripts/Relics/Actual/SkillTreeRelics/TreeDMG.tres" id="1_jv7ve"]
+[ext_resource type="Resource" uid="uid://dokvg8auxcf45" path="res://Scripts/System/DataTree/TreeEnergyMax.tres" id="2_jv7ve"]
+
+[resource]
+script = ExtResource("1_2qxb8")
+skill_name = "+10% Starting DMG"
+cost = 25
+prerequisite = ExtResource("2_jv7ve")
+associated_relic = ExtResource("1_jv7ve")
+metadata/_custom_type_script = "uid://bp7b0y3cuj2vr"
