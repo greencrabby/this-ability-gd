@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b81wrbrpte5s3"]
 
-[ext_resource type="PackedScene" uid="uid://bpq4lfdrf7qsc" path="res://Scenes/World/BaseStage.tscn" id="1_w2mxr"]
+[ext_resource type="PackedScene" uid="uid://bpq4lfdrf7qsc" path="res://Scenes/World/F1/BaseStageF1.tscn" id="1_w2mxr"]
 [ext_resource type="Texture2D" uid="uid://hw7ephxtodas" path="res://Assets/Maps and Sheets/tileset_gray.png" id="2_2vtac"]
 [ext_resource type="PackedScene" uid="uid://bn2wn50mwtbyg" path="res://Scenes/Entities/Bean.tscn" id="3_i6npy"]
 

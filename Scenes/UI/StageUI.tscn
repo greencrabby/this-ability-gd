@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dp2o535k2duq1"]
 
 [ext_resource type="Texture2D" uid="uid://b2yhq1dl2xwpl" path="res://Assets/Sprites/enemycountsprite.png" id="1_x5uor"]
+[ext_resource type="PackedScene" uid="uid://ba1m2ut6fx8l8" path="res://Scenes/UI/RelicInfoPanel.tscn" id="2_cqipw"]
+[ext_resource type="PackedScene" uid="uid://bn3rqdu5l5rrs" path="res://Scenes/UI/WeaponInfoPanel.tscn" id="3_4c7j1"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=150711430]
 
@@ -47,3 +49,17 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 64
 text = "Stage Clear"
+
+[node name="RelicInfoPanel" parent="Control" unique_id=498566727 instance=ExtResource("2_cqipw")]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 273.0
+offset_right = 1150.4827
+offset_bottom = 347.244
+
+[node name="WeaponInfoPanel" parent="Control" unique_id=316731939 instance=ExtResource("3_4c7j1")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 229.0
+offset_right = 107.0
+offset_bottom = 379.0

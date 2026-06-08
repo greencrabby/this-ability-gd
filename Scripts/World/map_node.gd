@@ -89,13 +89,12 @@ func update_visual():
 		var tex_size = sprite.texture.get_size()
 		sprite.scale = target_size / tex_size
 
-	# 🎨 COLOR by state
 	match visual_state:
 		VisualState.CURRENT:
-			sprite.modulate = Color(1, 1, 0.4)   # yellow glow
+			sprite.modulate = Color.ORANGE
 		VisualState.REACHABLE:
-			sprite.modulate = Color(0.6, 1, 1)   # light blue
+			sprite.modulate = Color.WHITE
 		VisualState.LOCKED:
-			sprite.modulate = Color(0.3, 0.3, 0.3) # gray
+			sprite.modulate = Color.BLACK
 		VisualState.NORMAL:
-			sprite.modulate = Color(1, 1, 1)
+			sprite.modulate = Color.WHITE

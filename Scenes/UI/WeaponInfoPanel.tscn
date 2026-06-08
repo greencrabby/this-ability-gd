@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bn3rqdu5l5rrs"]
+
+[ext_resource type="Script" uid="uid://cpy4mf84v8dfp" path="res://weapon_info_panel.gd" id="1_wxxeu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28rd0"]
+
+[node name="WeaponInfoPanel" type="Panel" unique_id=316731939]
+offset_right = 115.0
+offset_bottom = 150.0
+script = ExtResource("1_wxxeu")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=897926482]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+scale = Vector2(0.33513427, 0.36303607)
+texture = SubResource("PlaceholderTexture2D_28rd0")
+
+[node name="TypeLabel" type="Label" parent="." unique_id=485444037]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 105.0
+offset_bottom = 33.0
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="." unique_id=662950325]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 105.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 12
+text = "test"
+vertical_alignment = 1
+
+[node name="FirerateLabel" type="Label" parent="." unique_id=1900301091]
+layout_mode = 0
+offset_top = 55.0
+offset_right = 105.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 12
+text = "test"
+vertical_alignment = 1
+
+[node name="DPSLabel" type="Label" parent="." unique_id=1787425523]
+layout_mode = 0
+offset_top = 79.0
+offset_right = 105.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 12
+text = "test"
+vertical_alignment = 1
+
+[node name="EnergyCostLabel" type="Label" parent="." unique_id=594948691]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 105.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 12
+text = "test"
+vertical_alignment = 1
+
+[node name="BulletSpeedLabel" type="Label" parent="." unique_id=1008632364]
+layout_mode = 0
+offset_top = 125.0
+offset_right = 105.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 12
+text = "test"
+vertical_alignment = 1

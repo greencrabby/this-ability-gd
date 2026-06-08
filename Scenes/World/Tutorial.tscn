@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bktfkew0mc6ou"]
+
+[ext_resource type="Script" uid="uid://b7rbpr4tdsir0" path="res://Scripts/World/tutorial_run_manager.gd" id="1_p3bmu"]
+[ext_resource type="Script" uid="uid://dhmqnudpdqjm0" path="res://Scripts/World/tutorial_main.gd" id="1_wvbps"]
+[ext_resource type="Script" uid="uid://cci5wn4lgvtdy" path="res://Scripts/World/tutorial_map_generator.gd" id="2_0hls7"]
+[ext_resource type="Script" uid="uid://cegt3tuigwweu" path="res://Scripts/World/tutorial_map_manager.gd" id="2_2qroy"]
+[ext_resource type="PackedScene" uid="uid://scsaoh0s2xl2" path="res://Scenes/UI/EndScreen.tscn" id="3_ayq4x"]
+[ext_resource type="PackedScene" uid="uid://bkl2l3ubj57ey" path="res://Scenes/World/Tutorial/TutorialNode1.tscn" id="6_3dotp"]
+[ext_resource type="PackedScene" uid="uid://l2l4t0r5vbsv" path="res://Scenes/World/MapNode.tscn" id="6_rqiio"]
+[ext_resource type="PackedScene" uid="uid://lyetijl1g85s" path="res://Scenes/World/Tutorial/TutorialNode2.tscn" id="7_wvbps"]
+[ext_resource type="PackedScene" uid="uid://bpd1lrae3ne51" path="res://Scenes/World/Tutorial/TutorialShop.tscn" id="8_ayq4x"]
+[ext_resource type="PackedScene" uid="uid://bhbaj5xcquu76" path="res://Scenes/World/Tutorial/TutorialFinal.tscn" id="9_584ro"]
+[ext_resource type="PackedScene" uid="uid://cw480a6y3fkfg" path="res://Scenes/UI/MainUI.tscn" id="10_501ke"]
+
+[node name="TutorialMain" type="Node2D" unique_id=501967048]
+script = ExtResource("1_wvbps")
+
+[node name="TutorialRunManager" type="Node2D" parent="." unique_id=515670468]
+script = ExtResource("1_p3bmu")
+end_screen_scene = ExtResource("3_ayq4x")
+
+[node name="TutorialMapManager" type="Node2D" parent="." unique_id=1480159982]
+script = ExtResource("2_2qroy")
+
+[node name="TutorialMapGenerator" type="Node2D" parent="." unique_id=1558993051]
+script = ExtResource("2_0hls7")
+node_scene = ExtResource("6_rqiio")
+combat_stage = ExtResource("6_3dotp")
+encounter_stage = ExtResource("7_wvbps")
+shop_stage = ExtResource("8_ayq4x")
+completion_stage = ExtResource("9_584ro")
+
+[node name="MapContainer" type="Node2D" parent="." unique_id=1113824002]
+
+[node name="StageContainer" type="Node2D" parent="." unique_id=338056170]
+
+[node name="MapCamera" type="Camera2D" parent="." unique_id=416813283]
+
+[node name="CanvasLayer" parent="." unique_id=1971691407 instance=ExtResource("10_501ke")]
+
+[node name="TutorialLayer" type="CanvasLayer" parent="." unique_id=97292517]
+
+[node name="TutorialLabel" type="RichTextLabel" parent="TutorialLayer" unique_id=857408415]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -120.0
+offset_right = 350.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 16
+text = "placeholder"
+horizontal_alignment = 1

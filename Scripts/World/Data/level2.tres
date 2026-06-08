@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="LevelConfig" format=3 uid="uid://368aa1ekixe0"]
+
+[ext_resource type="PackedScene" uid="uid://c450bdrcq1g00" path="res://Scenes/World/F2/F2BossStage.tscn" id="1_351x3"]
+[ext_resource type="Script" uid="uid://dgi6y6mayuv8x" path="res://Scripts/World/floor_config.gd" id="1_stv1u"]
+[ext_resource type="PackedScene" uid="uid://c0wbx5gfxvgni" path="res://Scenes/World/F2/F2DaylightRobbery.tscn" id="2_351x3"]
+[ext_resource type="PackedScene" uid="uid://g0pf6rbkihiq" path="res://Scenes/World/F2/F2Encounter.tscn" id="2_fs0nk"]
+[ext_resource type="Script" uid="uid://bydufsyufe75d" path="res://Scripts/World/level_config.gd" id="2_mafac"]
+[ext_resource type="PackedScene" uid="uid://br5101niwixvt" path="res://Scenes/World/F2/F2DuelStage.tscn" id="3_arknb"]
+[ext_resource type="PackedScene" uid="uid://bl1gjtm605a7a" path="res://Scenes/World/F2/F2GuardianofJustice.tscn" id="3_hs2cl"]
+[ext_resource type="PackedScene" uid="uid://w1sym2weymrj" path="res://Scenes/World/F2/F2LearningforAll.tscn" id="4_4o6le"]
+[ext_resource type="PackedScene" uid="uid://wvs8dpg7kk0h" path="res://Scenes/World/F2/F2LookOutAbove.tscn" id="5_7tgdi"]
+[ext_resource type="PackedScene" uid="uid://cf6gxtquk0x5s" path="res://Scenes/World/F2/F2Shop.tscn" id="5_351x3"]
+[ext_resource type="Resource" uid="uid://bo172r280f55s" path="res://Scripts/World/Data/l2floor1.tres" id="5_arknb"]
+[ext_resource type="PackedScene" uid="uid://sfpv54c656xk" path="res://Scenes/World/F2/F2RescueMission.tscn" id="6_dag8c"]
+[ext_resource type="PackedScene" uid="uid://b5mnm5djntrm3" path="res://Scenes/World/F2/F2ToySoldiers.tscn" id="7_51vfk"]
+[ext_resource type="Resource" uid="uid://df4pfxp6guotc" path="res://Scripts/World/Data/l2floor2.tres" id="8_4o6le"]
+[ext_resource type="Resource" uid="uid://cm8po38lh5b3p" path="res://Scripts/World/Data/l2floor3.tres" id="9_7tgdi"]
+[ext_resource type="Resource" uid="uid://bx68nkskbpgbs" path="res://Scripts/World/Data/l2floor4.tres" id="10_dag8c"]
+[ext_resource type="Resource" uid="uid://ci47y4uet38r" path="res://Scripts/World/Data/l2floor5.tres" id="11_51vfk"]
+
+[resource]
+script = ExtResource("2_mafac")
+floors = 5
+floor_configs = Array[ExtResource("1_stv1u")]([ExtResource("5_arknb"), ExtResource("8_4o6le"), ExtResource("9_7tgdi"), ExtResource("10_dag8c"), ExtResource("11_51vfk")])
+combat_scenes = Array[PackedScene]([ExtResource("2_351x3"), ExtResource("3_hs2cl"), ExtResource("4_4o6le"), ExtResource("5_7tgdi"), ExtResource("6_dag8c"), ExtResource("7_51vfk")])
+encounter_scenes = Array[PackedScene]([ExtResource("2_fs0nk")])
+duel_scenes = Array[PackedScene]([ExtResource("3_arknb")])
+shop_scene = ExtResource("5_351x3")
+boss_scene = ExtResource("1_351x3")
+max_total_duels = 1
+metadata/_custom_type_script = "uid://bydufsyufe75d"

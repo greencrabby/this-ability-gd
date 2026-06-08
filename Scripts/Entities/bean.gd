@@ -28,6 +28,9 @@ var is_dead: bool = false
 
 var interactables: Array = []
 
+var weapon_panel = null
+var relic_panel = null
+
 func _ready():
 	add_to_group("player")
 
@@ -38,17 +41,17 @@ func _ready():
 
 	apply_relics()
 
-	# restore weapon
 	if run and run.current_weapon_scene:
 		equip_weapon(run.current_weapon_scene)
 
 	interaction_area.area_entered.connect(_on_area_entered)
 	interaction_area.area_exited.connect(_on_area_exited)
+	relic_panel = get_tree().get_first_node_in_group("relic_info_panel")
+	weapon_panel = get_tree().get_first_node_in_group("weapon_info_panel")
 
 func apply_relics():
 	var run = get_tree().get_first_node_in_group("run_manager")
 
-	# reset base
 	acceleration = base_acceleration
 	max_speed = base_max_speed
 	brake_force = base_brake_force
@@ -72,6 +75,7 @@ func apply_relics():
 
 func _process(delta):
 	update_aim()
+	update_item_tooltip()
 
 	if Input.is_action_just_pressed("interact"):
 		try_interact()
@@ -192,7 +196,6 @@ func equip_weapon(new_weapon_scene: PackedScene) -> PackedScene:
 	if weapon_slot.get_child_count() > 0:
 		var old_weapon = weapon_slot.get_child(0)
 
-		# store scene BEFORE deleting
 		old_weapon_scene = load(old_weapon.scene_file_path)
 
 		old_weapon.queue_free()
@@ -236,3 +239,38 @@ func try_interact():
 
 func update_aim():
 	weapon_pivot.look_at(get_global_mouse_position())
+
+func update_item_tooltip():
+	if relic_panel == null or weapon_panel == null:
+		return
+
+	interactables = interactables.filter(
+		func(obj): return is_instance_valid(obj)
+	)
+
+	var closest = null
+	var closest_dist = INF
+
+	for obj in interactables:
+		var dist = global_position.distance_to(obj.global_position)
+
+		if dist < closest_dist:
+			closest_dist = dist
+			closest = obj
+
+	if closest == null:
+		relic_panel.hide_relic()
+		weapon_panel.hide_weapon()
+		return
+
+	if closest.has_method("get_relic"):
+		relic_panel.show_relic(closest.get_relic())
+		weapon_panel.hide_weapon()
+
+	elif closest.has_method("get_weapon"):
+		weapon_panel.show_weapon(closest.get_weapon())
+		relic_panel.hide_relic()
+
+	else:
+		relic_panel.hide_relic()
+		weapon_panel.hide_weapon()

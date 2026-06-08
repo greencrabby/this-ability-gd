@@ -30,14 +30,10 @@ func _input(event):
 func try_buy():
 	var run = get_tree().get_first_node_in_group("run_manager")
 	if run == null:
-		print("No RunManager found!")
 		return
 	
 	if not run.spend_money(price):
-		print("Not enough money")
 		return
-	
-	print("Bought for:", price)
 
 	spawn_pickup()
 	queue_free()

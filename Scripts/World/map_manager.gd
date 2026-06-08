@@ -3,14 +3,18 @@ extends Node
 @onready var stage_container = get_parent().get_node("StageContainer")
 @onready var map_container = get_parent().get_node("MapContainer")
 
+@onready var end_run_button = get_parent().get_node("EndRun/EndRunButton")
+@onready var end_run_dialog = get_parent().get_node("EndRun/EndRunConfirmation")
+
 var current_node: MapNode
 var all_nodes: Array = []
 
 func _ready():
-	# collect all nodes in scene
 	add_to_group("map_manager")
+	
+	end_run_button.pressed.connect(_on_end_run_pressed)
+	end_run_dialog.confirmed.connect(_on_end_run_confirmed)
 
-# 🔹 START SELECTION
 func choose_start(start_node: MapNode):
 	current_node = start_node
 	current_node.visited = true
@@ -45,7 +49,6 @@ func _on_node_selected(node: MapNode):
 
 	move_to(node)
 
-# 🔹 MOVE
 func move_to(target: MapNode):
 	print("Connections from current:")
 	for conn in current_node.get_connections():
@@ -60,7 +63,6 @@ func move_to(target: MapNode):
 		print("No connection")
 		return
 	
-	# 💰 lateral cost
 	var run = get_tree().get_first_node_in_group("run_manager")
 
 	if connection.is_lateral:
@@ -74,13 +76,10 @@ func move_to(target: MapNode):
 
 		print("Paid:", connection.cost)
 
-	# 🔒 lock previous node
 	current_node.locked = true
 
-	# 🔒 lock previous floors
 	lock_previous_floors(target.floor)
-
-	# 🚶 move
+	
 	current_node = target
 	current_node.visited = true
 	
@@ -92,20 +91,17 @@ func move_to(target: MapNode):
 	if camera:
 		camera.global_position = target.global_position
 
-# 🔹 FIND CONNECTION
 func get_connection(from: MapNode, to: MapNode):
 	for conn in from.get_connections():
 		if conn["node"] == to:
 			return conn
 	return null
 
-# 🔒 LOCK FLOORS
 func lock_previous_floors(floor: int):
 	for node in all_nodes:
 		if node.floor < floor:
 			node.locked = true
 
-# 🔹 HELPER
 func is_reachable(node: MapNode) -> bool:
 	for conn in current_node.get_connections():
 		if conn["node"] == node and not node.locked:
@@ -113,6 +109,7 @@ func is_reachable(node: MapNode) -> bool:
 	return false
 
 func load_stage(scene: PackedScene):
+	end_run_button.visible = false
 	map_container.visible = false
 	stage_container.visible = true
 
@@ -120,7 +117,6 @@ func load_stage(scene: PackedScene):
 		print("No stage assigned!")
 		return
 
-	# clear old stage
 	for child in stage_container.get_children():
 		child.queue_free()
 
@@ -132,12 +128,10 @@ func load_stage(scene: PackedScene):
 
 	stage_container.add_child(stage)
 
-	# 🔴 turn OFF map camera
 	var map_camera = get_parent().get_node("MapCamera")
 	if map_camera:
 		map_camera.make_current()
 
-	# 🟢 wait for player to exist, then enable its camera
 	await get_tree().process_frame
 
 	var player = stage.get_node_or_null("Bean")
@@ -152,6 +146,7 @@ func return_to_map():
 
 	map_container.visible = true
 	stage_container.visible = false
+	end_run_button.visible = true
 
 	activate_map_camera()
 
@@ -162,20 +157,25 @@ func activate_map_camera():
 
 func update_node_visuals():
 	for node in all_nodes:
-		# 🔒 locked nodes
 		if node.locked:
 			node.visual_state = MapNode.VisualState.LOCKED
 
-		# 🟢 current node
 		elif node == current_node:
 			node.visual_state = MapNode.VisualState.CURRENT
 
-		# 🔵 reachable nodes
 		elif current_node != null and is_reachable(node):
 			node.visual_state = MapNode.VisualState.REACHABLE
 
-		# ⚪ default
 		else:
 			node.visual_state = MapNode.VisualState.NORMAL
 
 		node.update_visual()
+
+func _on_end_run_pressed():
+	end_run_dialog.popup_centered()
+
+func _on_end_run_confirmed():
+	var run = get_tree().get_first_node_in_group("run_manager")
+
+	if run:
+		run.show_end_screen(0)

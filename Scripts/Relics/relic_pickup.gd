@@ -20,3 +20,6 @@ func interact(player):
 			relic.on_pickup(player)
 
 	queue_free()
+
+func get_relic():
+	return relic

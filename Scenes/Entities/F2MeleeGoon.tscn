@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://c3p5prxwhh4bi"]
+
+[ext_resource type="Script" uid="uid://bad6jkojx0kf2" path="res://Scripts/Entities/melee_goon.gd" id="1_3trga"]
+[ext_resource type="Texture2D" uid="uid://c18evk54r0d5h" path="res://Assets/Maps and Sheets/f2meleegoon.png" id="2_gsgo0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k01hv"]
+height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72d1m"]
+atlas = ExtResource("2_gsgo0")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xko6"]
+atlas = ExtResource("2_gsgo0")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opi7w"]
+atlas = ExtResource("2_gsgo0")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgyye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72d1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xko6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opi7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3rbe4"]
+radius = 11.0
+
+[node name="F2MeleeGoon" type="CharacterBody2D" unique_id=2129949207]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_3trga")
+contact_damage = 15.0
+randomness_strength = 0.6
+max_health = 20.0
+knockback_resistance = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271881629]
+shape = SubResource("CapsuleShape2D_k01hv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1681097995]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_wgyye")
+frame_progress = 0.5744858
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=514769579]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1830243948]
+shape = SubResource("CapsuleShape2D_3rbe4")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hit"]

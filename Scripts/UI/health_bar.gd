@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D
-@export var textures: Array[Texture2D]  # 0,25,50,75,100
+@export var textures: Array[Texture2D]
 
 @onready var label = $Label
 

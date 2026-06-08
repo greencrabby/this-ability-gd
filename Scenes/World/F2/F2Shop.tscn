@@ -1,0 +1,444 @@
+[gd_scene format=4 uid="uid://cf6gxtquk0x5s"]
+
+[ext_resource type="Script" uid="uid://dn3qj7jg2jx2a" path="res://Scripts/World/base_stage.gd" id="1_3ooad"]
+[ext_resource type="Script" uid="uid://uhggdiibl4u4" path="res://Scripts/World/stage_controller.gd" id="2_klwkn"]
+[ext_resource type="PackedScene" uid="uid://8gf1n68r00go" path="res://Scenes/World/ShopItem.tscn" id="3_7gpat"]
+[ext_resource type="PackedScene" uid="uid://d3y1tfuou5ylr" path="res://Scenes/Weaponry/BasicSMG.tscn" id="4_x5hwn"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="5_c05kp"]
+[ext_resource type="PackedScene" uid="uid://dxqlcdofae5rr" path="res://Scenes/Weaponry/BasicShotgun.tscn" id="6_tmd6h"]
+[ext_resource type="PackedScene" uid="uid://bam4b8kppjlbr" path="res://Scenes/Weaponry/BouncingBasicShotgun.tscn" id="7_j1iwn"]
+[ext_resource type="PackedScene" uid="uid://cduuediwxcxxr" path="res://Scenes/Weaponry/Sword.tscn" id="8_t7pfl"]
+[ext_resource type="PackedScene" uid="uid://cvhpr0wi4u2mg" path="res://Scenes/Weaponry/T2BouncingShotgun.tscn" id="9_wju6l"]
+[ext_resource type="PackedScene" uid="uid://cpgrx2kfr7o15" path="res://Scenes/Weaponry/Tec9.tscn" id="10_2a3sg"]
+[ext_resource type="PackedScene" uid="uid://donu4dwb60a26" path="res://Scenes/Weaponry/Revolver.tscn" id="11_7hx38"]
+[ext_resource type="PackedScene" uid="uid://bggvjk7tk4ome" path="res://Scenes/Weaponry/DoubleBarrel.tscn" id="12_s8on4"]
+[ext_resource type="PackedScene" uid="uid://b0dc81vjouxbj" path="res://Scenes/Weaponry/AutoShotgun.tscn" id="13_okyb1"]
+[ext_resource type="PackedScene" uid="uid://5uj4dv208hqf" path="res://Scenes/Weaponry/BouncingPistol.tscn" id="14_f5tmc"]
+[ext_resource type="PackedScene" uid="uid://drackfv2be4t" path="res://Scenes/Weaponry/T2BouncingPistol.tscn" id="15_5lqxg"]
+[ext_resource type="PackedScene" uid="uid://c4lhl8wn8of3n" path="res://Scenes/Weaponry/Mac10.tscn" id="16_wb53f"]
+[ext_resource type="PackedScene" uid="uid://hmmw447jlkua" path="res://Scenes/Weaponry/KrissVector.tscn" id="17_v4m6d"]
+[ext_resource type="PackedScene" uid="uid://x5t64fdfytss" path="res://Scenes/Weaponry/T2BouncingSMG.tscn" id="18_5x6k4"]
+[ext_resource type="PackedScene" uid="uid://t1uumkxnfb5m" path="res://Scenes/Weaponry/FireAxe.tscn" id="19_gwybe"]
+[ext_resource type="PackedScene" uid="uid://dp3rneabhvowc" path="res://Scenes/Weaponry/Pickaxe.tscn" id="20_s26db"]
+[ext_resource type="PackedScene" uid="uid://bgea5ryj053vp" path="res://Scenes/Weaponry/DiamondPickaxe.tscn" id="21_bgcx2"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="22_y4760"]
+[ext_resource type="Resource" uid="uid://ba2lm0hu7lanv" path="res://Scripts/Relics/Actual/DamagedRevolverCylinder.tres" id="23_i264m"]
+[ext_resource type="Resource" uid="uid://dmn04m236hpwd" path="res://Scripts/Relics/Actual/VanguardsHalberd.tres" id="24_spopa"]
+[ext_resource type="Resource" uid="uid://cijgmh1ptqg1w" path="res://Scripts/Relics/Actual/VampiresNecklace.tres" id="25_5qdx5"]
+[ext_resource type="Resource" uid="uid://c6dnego4hkpqx" path="res://Scripts/Relics/Actual/ProofOfLongevity.tres" id="26_nohti"]
+[ext_resource type="Resource" uid="uid://cjalh5dmtbg0x" path="res://Scripts/Relics/Actual/AssortedFruits.tres" id="27_eupph"]
+[ext_resource type="Resource" uid="uid://ipl01r7eslxu" path="res://Scripts/Relics/Actual/SeaweedSalad.tres" id="28_jpnyg"]
+[ext_resource type="Resource" uid="uid://cowsfk7msgkxt" path="res://Scripts/Relics/Actual/OrangeStorm.tres" id="29_oiqp7"]
+[ext_resource type="Resource" uid="uid://bpk4v2x7qperf" path="res://Scripts/Relics/Actual/MealVoucher.tres" id="30_5itu5"]
+[ext_resource type="Resource" uid="uid://hop7qbe1snsf" path="res://Scripts/Relics/Actual/SeaConch.tres" id="31_y3yoy"]
+[ext_resource type="Resource" uid="uid://cmsn1aqwrbkpb" path="res://Scripts/Relics/Actual/ItaliansWrath.tres" id="32_mnjr2"]
+[ext_resource type="Resource" uid="uid://bxdpi415gnt52" path="res://Scripts/Relics/Actual/FancyMonocle.tres" id="33_58pxv"]
+[ext_resource type="Resource" uid="uid://bm02oa1xjoxhl" path="res://Scripts/Relics/Actual/LifeCrystal.tres" id="34_tdvt0"]
+[ext_resource type="Resource" uid="uid://dk2io8svufrnv" path="res://Scripts/Relics/Actual/Investment.tres" id="35_twluv"]
+[ext_resource type="Resource" uid="uid://1eafae28tq6h" path="res://Scripts/Relics/Actual/LifeStone.tres" id="36_43dv0"]
+[ext_resource type="Resource" uid="uid://bgnejnpb1jbgp" path="res://Scripts/Relics/Actual/Desperado.tres" id="37_fxcyn"]
+[ext_resource type="Resource" uid="uid://niav5h6c4no5" path="res://Scripts/Relics/Actual/GoldenChalice.tres" id="38_ns0qi"]
+[ext_resource type="PackedScene" uid="uid://cuw1ogopqtcc6" path="res://Scenes/Weaponry/WeaponPickup.tscn" id="39_vdvij"]
+[ext_resource type="PackedScene" uid="uid://bdne5f8u375rk" path="res://Scenes/Relics/RelicPickup.tscn" id="40_vuk8p"]
+[ext_resource type="Script" uid="uid://cmjtalwnv8t2p" path="res://Scripts/World/reward_spawner.gd" id="41_ttbi4"]
+[ext_resource type="PackedScene" uid="uid://crd4asyxbcyln" path="res://Scenes/World/Chest.tscn" id="42_dhcuk"]
+[ext_resource type="Script" uid="uid://ct0oef400glvj" path="res://Scripts/World/exit_area.gd" id="43_56h50"]
+[ext_resource type="Texture2D" uid="uid://ctvov381185bs" path="res://Assets/Sprites/Dimensional_Portal.png" id="44_blbit"]
+[ext_resource type="Script" uid="uid://d1bmuj0sobnxl" path="res://Scripts/System/enemy_spawner.gd" id="45_hndps"]
+[ext_resource type="PackedScene" uid="uid://dp2o535k2duq1" path="res://Scenes/UI/StageUI.tscn" id="46_1h03e"]
+[ext_resource type="Texture2D" uid="uid://dypqtoi1xtqxp" path="res://Assets/Maps and Sheets/tileset_blue.png" id="47_c073r"]
+[ext_resource type="PackedScene" uid="uid://bn2wn50mwtbyg" path="res://Scenes/Entities/Bean.tscn" id="48_klwkn"]
+[ext_resource type="Texture2D" uid="uid://b0pu5s05bia5x" path="res://Assets/Maps and Sheets/shopguy.png" id="49_7gpat"]
+[ext_resource type="Texture2D" uid="uid://bh7nheip8epxk" path="res://Assets/Sprites/shoppodium.png" id="50_x5hwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d6bh"]
+size = Vector2(15, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d6bh"]
+atlas = ExtResource("44_blbit")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ftd"]
+atlas = ExtResource("44_blbit")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx6te"]
+atlas = ExtResource("44_blbit")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkg6r"]
+atlas = ExtResource("44_blbit")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73acg"]
+atlas = ExtResource("44_blbit")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgvr2"]
+atlas = ExtResource("44_blbit")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ct8tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d6bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ftd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx6te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkg6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73acg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgvr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kr436"]
+texture = ExtResource("47_c073r")
+0:0/0 = 0
+0:0/0/z_index = -1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -2.3503933, -2.8727036, -1.828083, 8, -8, 8)
+1:0/0 = 0
+1:0/0/z_index = -1
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -8, -3.0468063)
+2:0/0 = 0
+2:0/0/z_index = -1
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -8, -3.0468063)
+3:0/0 = 0
+3:0/0/z_index = -1
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 2.3503933, 8, 2.0021877, -2.8727036, -8, -3.0468063)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+0:1/0/z_index = -1
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:1/0 = 0
+1:1/0/z_index = -1
+2:1/0 = 0
+2:1/0/z_index = -1
+3:1/0 = 0
+3:1/0/z_index = -1
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.0021877, -8, 8, -8, 8, -2.6985989, 2.1762905, -2.8727036)
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/z_index = -1
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.1762905, -8, -2.1762905, -2.8727036, -8, -2.8727036)
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+9:1/0/z_index = -1
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:1/0 = 0
+0:2/0 = 0
+0:2/0/z_index = -1
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/z_index = -1
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/z_index = -1
+5:2/0 = 0
+5:2/0/z_index = -1
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+9:2/0/z_index = -1
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:2/0 = 0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+0:3/0 = 0
+0:3/0/z_index = -1
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/z_index = -1
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/z_index = -1
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+9:3/0/z_index = -1
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_40be5"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/1 = SubResource("TileSetAtlasSource_kr436")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxxwj"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk8e0"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of6yh"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1n1r"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl3my"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_454my"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onlg0"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apium"]
+atlas = ExtResource("49_7gpat")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5hwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxxwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk8e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of6yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1n1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl3my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_454my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onlg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apium")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c05kp"]
+size = Vector2(95, 94.99997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmd6h"]
+size = Vector2(40, 46.66667)
+
+[node name="BaseStage" type="Node2D" unique_id=1996748684]
+script = ExtResource("1_3ooad")
+
+[node name="StageController" type="Node2D" parent="." unique_id=87433]
+script = ExtResource("2_klwkn")
+shop_item_scene = ExtResource("3_7gpat")
+weapon_pool = Array[PackedScene]([ExtResource("4_x5hwn"), ExtResource("5_c05kp"), ExtResource("6_tmd6h"), ExtResource("7_j1iwn"), ExtResource("8_t7pfl"), ExtResource("9_wju6l"), ExtResource("10_2a3sg"), ExtResource("11_7hx38"), ExtResource("12_s8on4"), ExtResource("13_okyb1"), ExtResource("14_f5tmc"), ExtResource("15_5lqxg"), ExtResource("16_wb53f"), ExtResource("17_v4m6d"), ExtResource("18_5x6k4"), ExtResource("19_gwybe"), ExtResource("20_s26db"), ExtResource("21_bgcx2")])
+relic_pool = Array[ExtResource("22_y4760")]([ExtResource("23_i264m"), ExtResource("24_spopa"), ExtResource("25_5qdx5"), ExtResource("26_nohti"), ExtResource("27_eupph"), ExtResource("28_jpnyg"), ExtResource("29_oiqp7"), ExtResource("30_5itu5"), ExtResource("31_y3yoy"), ExtResource("32_mnjr2"), ExtResource("33_58pxv"), ExtResource("34_tdvt0"), ExtResource("35_twluv"), ExtResource("36_43dv0"), ExtResource("37_fxcyn"), ExtResource("38_ns0qi")])
+weapon_pickup_scene = ExtResource("39_vdvij")
+relic_pickup_scene = ExtResource("40_vuk8p")
+
+[node name="RewardSpawner" type="Node2D" parent="." unique_id=1394805550]
+script = ExtResource("41_ttbi4")
+chest_scene = ExtResource("42_dhcuk")
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=229801116]
+position = Vector2(272, 74)
+scale = Vector2(2, 2)
+script = ExtResource("43_56h50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=2029433658]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_6d6bh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ExitArea" unique_id=988784189]
+sprite_frames = SubResource("SpriteFrames_ct8tx")
+autoplay = "default"
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=12754450]
+script = ExtResource("45_hndps")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1603497270]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=377593012]
+
+[node name="P1" type="Node2D" parent="SpawnPoints" unique_id=1758289203]
+
+[node name="P2" type="Node2D" parent="SpawnPoints" unique_id=44525869]
+
+[node name="P3" type="Node2D" parent="SpawnPoints" unique_id=1618657821]
+
+[node name="ShopPoints" type="Node2D" parent="." unique_id=1406030973]
+
+[node name="P1" type="Node2D" parent="ShopPoints" unique_id=970355507]
+position = Vector2(36, 116)
+
+[node name="P2" type="Node2D" parent="ShopPoints" unique_id=868069031]
+position = Vector2(75, 116)
+
+[node name="P3" type="Node2D" parent="ShopPoints" unique_id=165201280]
+position = Vector2(115, 117)
+
+[node name="P4" type="Node2D" parent="ShopPoints" unique_id=1264382511]
+position = Vector2(155, 116)
+
+[node name="P5" type="Node2D" parent="ShopPoints" unique_id=925326692]
+position = Vector2(195, 116)
+
+[node name="CanvasLayer" parent="." unique_id=150711430 instance=ExtResource("46_1h03e")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1225181151]
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAABAAAAAQABAAEAAAACAAAAAQABAAEAAAADAAAAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQABAAEAAAAJAAAAAQABAAEAAAAKAAAAAQABAAEAAAALAAAAAQABAAEAAAALAAEAAQABAAEAAAAKAAEAAQABAAEAAAAJAAEAAQABAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAEAAEAAQABAAEAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAABAAIAAQABAAEAAAACAAIAAQABAAEAAAADAAIAAQABAAEAAAAEAAIAAQABAAEAAAAFAAIAAQABAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAEAAAAIAAIAAQABAAEAAAAJAAIAAQABAAEAAAAKAAIAAQABAAEAAAALAAIAAQABAAEAAAALAAMAAQABAAEAAAAKAAMAAQABAAEAAAAJAAMAAQABAAEAAAAIAAMAAQABAAEAAAAHAAMAAQABAAEAAAAGAAMAAQABAAEAAAAFAAMAAQABAAEAAAAEAAMAAQABAAEAAAADAAMAAQABAAEAAAACAAMAAQABAAEAAAABAAMAAQABAAEAAAABAAQAAQABAAEAAAAAAAMAAQABAAEAAAAAAAQAAQABAAEAAAAAAAUAAQABAAEAAAALAAQAAQABAAEAAAALAAUAAQABAAEAAAAKAAQAAQABAAEAAAAKAAUAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAEAAAAIAAQAAQABAAEAAAAIAAUAAQABAAEAAAAHAAUAAQABAAEAAAAHAAQAAQABAAEAAAAGAAQAAQABAAEAAAAGAAUAAQABAAEAAAAFAAUAAQABAAEAAAAEAAUAAQABAAEAAAAEAAQAAQABAAEAAAAFAAQAAQABAAEAAAADAAQAAQABAAEAAAADAAUAAQABAAEAAAACAAUAAQABAAEAAAACAAQAAQABAAEAAAABAAUAAQABAAEAAAAAAP//AQABAAAAAAABAP//AQABAAAAAAACAP//AQABAAAAAAADAP//AQABAAAAAAAEAP//AQABAAAAAAAFAP//AQABAAAAAAAGAP//AQABAAAAAAAHAP//AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAALAP//AQABAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAD//wQAAQAAAAEAAAD//wUAAQAAAAEAAAD//wYAAQAAAAQAAAAAAAYAAQABAAQAAAABAAYAAQABAAQAAAACAAYAAQABAAQAAAADAAYAAQABAAQAAAAEAAYAAQABAAQAAAAFAAYAAQABAAQAAAAGAAYAAQABAAQAAAAHAAYAAQABAAQAAAAIAAYAAQABAAQAAAAJAAYAAQABAAQAAAAKAAYAAQABAAQAAAALAAYAAQABAAQAAAAMAAYAAQADAAQAAAAMAAUAAQAJAAEAAAAMAAQAAQAJAAEAAAAMAAMAAQAJAAEAAAAMAAIAAQAJAAEAAAAMAAEAAQAJAAEAAAAMAAAAAQAJAAEAAAAMAP//AQADAAAAAAA=")
+tile_set = SubResource("TileSet_40be5")
+
+[node name="Bean" parent="." unique_id=569957952 instance=ExtResource("48_klwkn")]
+position = Vector2(16, 68)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1861769072]
+position = Vector2(110, 23)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_x5hwn")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="AnimatedSprite2D" unique_id=893028171]
+scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/StaticBody2D" unique_id=851201015]
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_c05kp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=879324371]
+position = Vector2(36, 116)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("50_x5hwn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=26415709]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1260415290]
+shape = SubResource("RectangleShape2D_tmd6h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1894275138]
+position = Vector2(75, 116)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("50_x5hwn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2" unique_id=1556972215]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=657332832]
+shape = SubResource("RectangleShape2D_tmd6h")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1944954113]
+position = Vector2(155, 116)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("50_x5hwn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4" unique_id=1660003155]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D" unique_id=756298361]
+shape = SubResource("RectangleShape2D_tmd6h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=144740837]
+position = Vector2(115, 116)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("50_x5hwn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3" unique_id=1908772709]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D" unique_id=2093071637]
+shape = SubResource("RectangleShape2D_tmd6h")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1189412131]
+position = Vector2(195, 116)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("50_x5hwn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D5" unique_id=1800147905]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D5/StaticBody2D" unique_id=998511003]
+shape = SubResource("RectangleShape2D_tmd6h")

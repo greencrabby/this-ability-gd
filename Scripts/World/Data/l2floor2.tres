@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FloorConfig" format=3 uid="uid://df4pfxp6guotc"]
+
+[ext_resource type="Script" uid="uid://dgi6y6mayuv8x" path="res://Scripts/World/floor_config.gd" id="1_pl1mn"]
+
+[resource]
+script = ExtResource("1_pl1mn")
+max_nodes = 3
+combat_weight = 50
+encounter_weight = 50
+duel_weight = 0
+max_duel_nodes = 0
+max_encounter_nodes = 1
+metadata/_custom_type_script = "uid://dgi6y6mayuv8x"

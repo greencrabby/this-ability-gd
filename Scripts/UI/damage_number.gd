@@ -12,7 +12,7 @@ func _process(delta):
 	position += velocity * delta
 	lifetime -= delta
 	
-	modulate.a = lifetime / 0.6  # fade out
+	modulate.a = lifetime / 0.6
 	
 	if lifetime <= 0:
 		queue_free()

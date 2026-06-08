@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ba1m2ut6fx8l8"]
+
+[ext_resource type="Script" uid="uid://52iib1rrehjp" path="res://relic_info_panel.gd" id="1_lomng"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lomng"]
+
+[node name="RelicInfoPanel" type="Panel" unique_id=498566727]
+offset_right = 105.0
+offset_bottom = 90.0
+script = ExtResource("1_lomng")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1628166277]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 90.0
+scale = Vector2(0.33513427, 0.36303607)
+texture = SubResource("PlaceholderTexture2D_lomng")
+
+[node name="NameLabel" type="Label" parent="." unique_id=471056157]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 143.69867
+offset_bottom = 51.664566
+scale = Vector2(0.6513529, 0.63873565)
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=607378931]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 104.05795
+offset_bottom = 73.12753
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 3

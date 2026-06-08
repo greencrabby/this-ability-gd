@@ -26,7 +26,6 @@ func _ready():
 		push_error("StageController: current_node is NULL")
 		return
 
-	# 🛒 SHOP → instant clear
 	if current_node.node_type == MapNode.NodeType.SHOP:
 		cleared = true
 		exit_area.monitoring = true
@@ -35,11 +34,9 @@ func _ready():
 		clear_label.visible = false
 		return
 
-	# 🚫 disable exit initially
 	exit_area.monitoring = false
 	exit_area.visible = false
 
-	# 🎯 ONLY combat-type nodes spawn enemies
 	if current_node.node_type in [
 		MapNode.NodeType.COMBAT,
 		MapNode.NodeType.DUEL,
@@ -48,10 +45,8 @@ func _ready():
 		setup_enemies()
 		clear_label.visible = false
 	else:
-		# 🧠 Encounter nodes → no enemies, but NOT auto-cleared
 		setup_encounter()
 
-# 🔻 ENEMY DEATH
 func _on_enemy_died():
 	enemies_alive -= 1
 	var run = get_tree().get_first_node_in_group("run_manager")
@@ -77,7 +72,7 @@ func setup_enemies():
 	var enemies_node = get_parent().get_node_or_null("Enemies")
 
 	if spawner == null or enemies_node == null:
-		print("Spawner or Enemies node missing!")
+		print("Spawner or Enemies node missing")
 		return
 
 	var player = get_tree().get_first_node_in_group("player")
@@ -95,21 +90,16 @@ func setup_enemies():
 
 			e.player = player
 
-	print("Spawned enemies:", enemies_alive)
-
 	if enemies_alive == 0:
-		print("⚠ No enemies spawned → auto clear")
 		clear_stage()
 	
 	update_ui()
 
-# 🎉 STAGE CLEAR
 func clear_stage():
 	if cleared:
 		return
 		
 	cleared = true
-	print("Stage Cleared!")
 
 	var chest_type = get_chest_type()
 	var chest = reward_spawner.spawn_chest(chest_type)
@@ -117,7 +107,6 @@ func clear_stage():
 	exit_area.monitoring = true
 	exit_area.visible = true
 
-# 🚪 EXIT
 func _on_exit_entered(body):
 	if not cleared:
 		return
@@ -134,7 +123,6 @@ func _on_exit_entered(body):
 	var generator = get_tree().get_first_node_in_group("map_generator")
 
 	if current_node.node_type == MapNode.NodeType.BOSS:
-		print("Boss defeated → next level")
 
 		if generator:
 			generator.go_to_next_level()
@@ -144,7 +132,6 @@ func _on_exit_entered(body):
 	if manager:
 		manager.return_to_map()
 
-# 🎁 CHEST TYPE LOGIC
 func get_chest_type():
 	match current_node.node_type:
 		MapNode.NodeType.COMBAT:
@@ -180,11 +167,10 @@ func pick_weighted(weights: Dictionary):
 		current += weights[key]
 		if roll <= current:
 			print("PICKED:", key)
-			return key  # ✅ return enum directly
+			return key
 
 	return weights.keys()[0]
 
-# 🛒 SHOP
 func spawn_shop_items():
 	if not shop_points:
 		print("Error: ShopPoints node not found!")
@@ -196,14 +182,12 @@ func spawn_shop_items():
 		return
 
 	var weapon_count = randi_range(1, 2)
-	# Relic count fills the remaining markers (up to a max of 3 more)
 	var relic_count = clamp(points.size() - weapon_count, 1, 3)
 
 	var index = 0
 	
 	var run = get_tree().get_first_node_in_group("run_manager")
 
-	# --- WEAPONS ---
 	for i in range(weapon_count):
 		if index >= points.size(): break
 	
@@ -217,8 +201,7 @@ func spawn_shop_items():
 		if not valid.is_empty():
 			create_shop_instance(valid.pick_random(), true, points[index].position)
 			index += 1
-
-	# --- RELICS ---
+			
 	var picked_relics: Array = []
 
 	for i in range(relic_count):
@@ -228,11 +211,9 @@ func spawn_shop_items():
 			if relic.rarity == Rarity.Type.BOSS:
 				return false
 			
-			# ❌ already owned
 			if run.relics.any(func(owned): return owned.resource_path == relic.resource_path):
 				return false
 			
-			# ❌ already picked in this shop
 			if picked_relics.any(func(r): return r.resource_path == relic.resource_path):
 				return false
 			
@@ -240,7 +221,7 @@ func spawn_shop_items():
 		)
 
 		if valid.is_empty():
-			break  # no more unique relics available
+			break
 
 		var chosen = valid.pick_random()
 		picked_relics.append(chosen)
@@ -250,7 +231,7 @@ func spawn_shop_items():
 
 func create_shop_instance(scene_or_res, is_weapon: bool, pos: Vector2):
 	var item = shop_item_scene.instantiate()
-	add_child(item) # Add to tree first so @onready vars inside item are ready
+	add_child(item)
 	item.position = pos
 	item.z_index = 5
 	
@@ -258,33 +239,26 @@ func create_shop_instance(scene_or_res, is_weapon: bool, pos: Vector2):
 	var price_val: int = 0
 	
 	if is_weapon:
-		# If it's a PackedScene, we instatiate it briefly to grab the sprite
 		var temp_node = scene_or_res.instantiate()
 		if temp_node.has_node("Sprite2D"):
 			texture = temp_node.get_node("Sprite2D").texture
 		price_val = randi_range(10, 100)
 		temp_node.queue_free()
 	else:
-		# If it's a Relic resource
 		texture = scene_or_res.icon
 		price_val = randi_range(20, 200)
 	
-	# Use your existing setup function!
 	item.setup(scene_or_res, texture, price_val, is_weapon)
 	
-	# Assign the correct pickup scene based on type
 	item.pickup_scene = weapon_pickup_scene if is_weapon else relic_pickup_scene
 
 func setup_encounter():
 	print("Encounter started")
 
-	# Example: no enemies → instant reward
 	clear_stage()
 	enemy_show.visible = false
 	clear_label.visible = false
 
-	# OR later:
-	# spawn NPC, event, gamble, etc.
 
 func update_ui():
 	if enemy_label:

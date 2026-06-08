@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://w0elu68xtnsx" path="res://Scripts/Weaponry/basic_sword.gd" id="1_msmms"]
 [ext_resource type="Texture2D" uid="uid://dhytb8v5mtix8" path="res://Assets/Sprites/diamondpickaxe.png" id="2_2l8qd"]
-[ext_resource type="Texture2D" uid="uid://dcdgwxiw4pfvt" path="res://Assets/Sprites/ironpickaxe.png" id="2_skre5"]
 [ext_resource type="Texture2D" uid="uid://rbn5wglfwrff" path="res://Assets/Sprites/BasicSlash.png" id="3_2l8qd"]
 [ext_resource type="PackedScene" uid="uid://dfwgr7td5mclo" path="res://Scenes/UI/DamageNumber.tscn" id="4_djpvx"]
 [ext_resource type="AudioStream" uid="uid://bfl6x6xlqnfpv" path="res://Assets/Audio/sword_parry.wav" id="5_wt4eq"]
@@ -27,7 +26,7 @@ rarity = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=787717671]
 position = Vector2(8, 0)
-texture = ExtResource("2_skre5")
+texture = ExtResource("2_2l8qd")
 
 [node name="SlashSprite" type="Sprite2D" parent="." unique_id=1806595470]
 position = Vector2(11, -1)

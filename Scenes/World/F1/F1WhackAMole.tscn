@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://mfk3a01vcg6d"]
 
-[ext_resource type="PackedScene" uid="uid://bpq4lfdrf7qsc" path="res://Scenes/World/BaseStage.tscn" id="1_1iaec"]
+[ext_resource type="PackedScene" uid="uid://bpq4lfdrf7qsc" path="res://Scenes/World/F1/BaseStageF1.tscn" id="1_1iaec"]
 [ext_resource type="PackedScene" uid="uid://bn2wn50mwtbyg" path="res://Scenes/Entities/Bean.tscn" id="2_i6xxf"]
 [ext_resource type="PackedScene" uid="uid://b7w4ximk8adym" path="res://Scenes/Entities/F1MeleeGoon.tscn" id="2_q888g"]
 [ext_resource type="PackedScene" uid="uid://yb5exyn4sy8d" path="res://Scenes/Entities/F1RangeGoon.tscn" id="3_iylcr"]

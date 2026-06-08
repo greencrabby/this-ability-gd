@@ -61,6 +61,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# 🧱 anti-stuck
 	if is_on_wall():
 		random_dir = -random_dir

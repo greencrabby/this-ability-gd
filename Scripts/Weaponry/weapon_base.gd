@@ -84,3 +84,33 @@ func can_use_alt() -> bool:
 
 func use_alt(shooter):
 	pass
+
+func get_weapon_type_name() -> String:
+	match weapon_type:
+		WeaponType.PISTOL:
+			return "Pistol"
+		WeaponType.SMG:
+			return "SMG"
+		WeaponType.RIFLE:
+			return "Rifle"
+		WeaponType.SHOTGUN:
+			return "Shotgun"
+		WeaponType.SNIPER:
+			return "Sniper"
+		WeaponType.SWORD:
+			return "Sword"
+
+	return "Unknown"
+
+func get_rarity_name() -> String:
+	match rarity:
+		Rarity.Type.COMMON:
+			return "Common"
+		Rarity.Type.RARE:
+			return "Rare"
+		Rarity.Type.LEGENDARY:
+			return "Legendary"
+		Rarity.Type.BOSS:
+			return "Boss"
+
+	return "Unknown"

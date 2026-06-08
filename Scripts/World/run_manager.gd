@@ -6,7 +6,6 @@ var run_started: bool = false
 @export var end_screen_scene: PackedScene
 
 var selected_starter_pack: StarterPack
-@export var all_possible_skills: Array[SkillNode] = []
 
 var money: int = 0
 
@@ -27,7 +26,6 @@ signal energy_changed
 signal money_changed
 signal relics_changed
 
-# Skill tree
 var floors_cleared: int = 0
 var enemies_killed: int = 0
 
@@ -76,7 +74,6 @@ func heal(amount: float):
 	health = min(health + amount, max_health)
 	emit_signal("health_changed")
 
-# Energy
 func use_energy(amount: float) -> bool:
 	if energy < amount:
 		return false
@@ -89,7 +86,6 @@ func gain_energy(amount: float):
 	energy = min(energy + amount, max_energy)
 	emit_signal("energy_changed")
 
-# Money
 func add_money(amount: int):
 	money += amount
 	emit_signal("money_changed")
@@ -102,7 +98,6 @@ func spend_money(amount: int) -> bool:
 	emit_signal("money_changed")
 	return true
 
-# Relics
 func add_relic(new_relic: RelicBase):
 	for r in relics:
 		if r.resource_path == new_relic.resource_path:
@@ -115,7 +110,6 @@ func add_relic(new_relic: RelicBase):
 	emit_signal("relics_changed")
 	return true
 
-# Recalculation
 func recalculate_stats():
 	max_health = base_max_health
 	max_energy = base_max_energy
@@ -133,13 +127,11 @@ func recalculate_stats():
 	emit_signal("health_changed")
 	emit_signal("energy_changed")
 
-# Energy Regen
 func _process(delta):
 	if player:
 		var regen = player.energy_regen
 		gain_energy(regen * delta)
 
-# Skill tree
 func calculate_points() -> int:
 	var points = 0
 	

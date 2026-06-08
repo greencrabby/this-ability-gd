@@ -1,0 +1,298 @@
+[gd_scene format=4 uid="uid://br5101niwixvt"]
+
+[ext_resource type="Script" uid="uid://dn3qj7jg2jx2a" path="res://Scripts/World/base_stage.gd" id="1_u5ur2"]
+[ext_resource type="Script" uid="uid://uhggdiibl4u4" path="res://Scripts/World/stage_controller.gd" id="2_s8ccx"]
+[ext_resource type="PackedScene" uid="uid://8gf1n68r00go" path="res://Scenes/World/ShopItem.tscn" id="3_86t3g"]
+[ext_resource type="PackedScene" uid="uid://d3y1tfuou5ylr" path="res://Scenes/Weaponry/BasicSMG.tscn" id="4_e1gcx"]
+[ext_resource type="PackedScene" uid="uid://ta00g1yeo0sl" path="res://Scenes/Weaponry/BasicPistol.tscn" id="5_o1njd"]
+[ext_resource type="PackedScene" uid="uid://dxqlcdofae5rr" path="res://Scenes/Weaponry/BasicShotgun.tscn" id="6_w62k0"]
+[ext_resource type="PackedScene" uid="uid://bam4b8kppjlbr" path="res://Scenes/Weaponry/BouncingBasicShotgun.tscn" id="7_jybf7"]
+[ext_resource type="PackedScene" uid="uid://cduuediwxcxxr" path="res://Scenes/Weaponry/Sword.tscn" id="8_u0or7"]
+[ext_resource type="PackedScene" uid="uid://cvhpr0wi4u2mg" path="res://Scenes/Weaponry/T2BouncingShotgun.tscn" id="9_lnbh0"]
+[ext_resource type="PackedScene" uid="uid://cpgrx2kfr7o15" path="res://Scenes/Weaponry/Tec9.tscn" id="10_hpoxw"]
+[ext_resource type="PackedScene" uid="uid://donu4dwb60a26" path="res://Scenes/Weaponry/Revolver.tscn" id="11_1gn1b"]
+[ext_resource type="PackedScene" uid="uid://bggvjk7tk4ome" path="res://Scenes/Weaponry/DoubleBarrel.tscn" id="12_0f7ff"]
+[ext_resource type="PackedScene" uid="uid://b0dc81vjouxbj" path="res://Scenes/Weaponry/AutoShotgun.tscn" id="13_iiph0"]
+[ext_resource type="PackedScene" uid="uid://5uj4dv208hqf" path="res://Scenes/Weaponry/BouncingPistol.tscn" id="14_7oafr"]
+[ext_resource type="PackedScene" uid="uid://drackfv2be4t" path="res://Scenes/Weaponry/T2BouncingPistol.tscn" id="15_v2k1f"]
+[ext_resource type="PackedScene" uid="uid://c4lhl8wn8of3n" path="res://Scenes/Weaponry/Mac10.tscn" id="16_iksmr"]
+[ext_resource type="PackedScene" uid="uid://hmmw447jlkua" path="res://Scenes/Weaponry/KrissVector.tscn" id="17_rf0yv"]
+[ext_resource type="PackedScene" uid="uid://x5t64fdfytss" path="res://Scenes/Weaponry/T2BouncingSMG.tscn" id="18_hdses"]
+[ext_resource type="PackedScene" uid="uid://t1uumkxnfb5m" path="res://Scenes/Weaponry/FireAxe.tscn" id="19_a00qc"]
+[ext_resource type="PackedScene" uid="uid://dp3rneabhvowc" path="res://Scenes/Weaponry/Pickaxe.tscn" id="20_peg7u"]
+[ext_resource type="PackedScene" uid="uid://bgea5ryj053vp" path="res://Scenes/Weaponry/DiamondPickaxe.tscn" id="21_x68a7"]
+[ext_resource type="Script" uid="uid://bt1qquw1lajkw" path="res://Scripts/Relics/relic_base.gd" id="22_735bh"]
+[ext_resource type="Resource" uid="uid://ba2lm0hu7lanv" path="res://Scripts/Relics/Actual/DamagedRevolverCylinder.tres" id="23_ch4c3"]
+[ext_resource type="Resource" uid="uid://dmn04m236hpwd" path="res://Scripts/Relics/Actual/VanguardsHalberd.tres" id="24_5o5eq"]
+[ext_resource type="Resource" uid="uid://cijgmh1ptqg1w" path="res://Scripts/Relics/Actual/VampiresNecklace.tres" id="25_3g52x"]
+[ext_resource type="Resource" uid="uid://c6dnego4hkpqx" path="res://Scripts/Relics/Actual/ProofOfLongevity.tres" id="26_phju6"]
+[ext_resource type="Resource" uid="uid://cjalh5dmtbg0x" path="res://Scripts/Relics/Actual/AssortedFruits.tres" id="27_f45e2"]
+[ext_resource type="Resource" uid="uid://ipl01r7eslxu" path="res://Scripts/Relics/Actual/SeaweedSalad.tres" id="28_lpbll"]
+[ext_resource type="Resource" uid="uid://cowsfk7msgkxt" path="res://Scripts/Relics/Actual/OrangeStorm.tres" id="29_ef03v"]
+[ext_resource type="Resource" uid="uid://bpk4v2x7qperf" path="res://Scripts/Relics/Actual/MealVoucher.tres" id="30_fsvpb"]
+[ext_resource type="Resource" uid="uid://hop7qbe1snsf" path="res://Scripts/Relics/Actual/SeaConch.tres" id="31_aaurt"]
+[ext_resource type="Resource" uid="uid://cmsn1aqwrbkpb" path="res://Scripts/Relics/Actual/ItaliansWrath.tres" id="32_1th8g"]
+[ext_resource type="Resource" uid="uid://bxdpi415gnt52" path="res://Scripts/Relics/Actual/FancyMonocle.tres" id="33_wce05"]
+[ext_resource type="Resource" uid="uid://bm02oa1xjoxhl" path="res://Scripts/Relics/Actual/LifeCrystal.tres" id="34_uv7yg"]
+[ext_resource type="Resource" uid="uid://dk2io8svufrnv" path="res://Scripts/Relics/Actual/Investment.tres" id="35_rc1is"]
+[ext_resource type="Resource" uid="uid://1eafae28tq6h" path="res://Scripts/Relics/Actual/LifeStone.tres" id="36_5msku"]
+[ext_resource type="Resource" uid="uid://bgnejnpb1jbgp" path="res://Scripts/Relics/Actual/Desperado.tres" id="37_4sgcj"]
+[ext_resource type="Resource" uid="uid://niav5h6c4no5" path="res://Scripts/Relics/Actual/GoldenChalice.tres" id="38_ryhwt"]
+[ext_resource type="PackedScene" uid="uid://cuw1ogopqtcc6" path="res://Scenes/Weaponry/WeaponPickup.tscn" id="39_monb4"]
+[ext_resource type="PackedScene" uid="uid://bdne5f8u375rk" path="res://Scenes/Relics/RelicPickup.tscn" id="40_ojwu6"]
+[ext_resource type="Script" uid="uid://cmjtalwnv8t2p" path="res://Scripts/World/reward_spawner.gd" id="41_cxwik"]
+[ext_resource type="PackedScene" uid="uid://crd4asyxbcyln" path="res://Scenes/World/Chest.tscn" id="42_2yjd4"]
+[ext_resource type="Script" uid="uid://ct0oef400glvj" path="res://Scripts/World/exit_area.gd" id="43_as703"]
+[ext_resource type="Texture2D" uid="uid://ctvov381185bs" path="res://Assets/Sprites/Dimensional_Portal.png" id="44_ci281"]
+[ext_resource type="Script" uid="uid://d1bmuj0sobnxl" path="res://Scripts/System/enemy_spawner.gd" id="45_n1clm"]
+[ext_resource type="PackedScene" uid="uid://dp2o535k2duq1" path="res://Scenes/UI/StageUI.tscn" id="46_mye7s"]
+[ext_resource type="PackedScene" uid="uid://b3agnokpii74j" path="res://Scenes/Entities/F2StrongRangeGoon.tscn" id="46_s8ccx"]
+[ext_resource type="Texture2D" uid="uid://dypqtoi1xtqxp" path="res://Assets/Maps and Sheets/tileset_blue.png" id="47_xtjeo"]
+[ext_resource type="PackedScene" uid="uid://bn2wn50mwtbyg" path="res://Scenes/Entities/Bean.tscn" id="49_86t3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d6bh"]
+size = Vector2(15, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d6bh"]
+atlas = ExtResource("44_ci281")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ftd"]
+atlas = ExtResource("44_ci281")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx6te"]
+atlas = ExtResource("44_ci281")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkg6r"]
+atlas = ExtResource("44_ci281")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73acg"]
+atlas = ExtResource("44_ci281")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgvr2"]
+atlas = ExtResource("44_ci281")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ct8tx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d6bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ftd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx6te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkg6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73acg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgvr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kr436"]
+texture = ExtResource("47_xtjeo")
+0:0/0 = 0
+0:0/0/z_index = -1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -2.3503933, -2.8727036, -1.828083, 8, -8, 8)
+1:0/0 = 0
+1:0/0/z_index = -1
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -8, -3.0468063)
+2:0/0 = 0
+2:0/0/z_index = -1
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.8727036, -8, -3.0468063)
+3:0/0 = 0
+3:0/0/z_index = -1
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 2.3503933, 8, 2.0021877, -2.8727036, -8, -3.0468063)
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+0:1/0/z_index = -1
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:1/0 = 0
+1:1/0/z_index = -1
+2:1/0 = 0
+2:1/0/z_index = -1
+3:1/0 = 0
+3:1/0/z_index = -1
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.0021877, -8, 8, -8, 8, -2.6985989, 2.1762905, -2.8727036)
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/z_index = -1
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.1762905, -8, -2.1762905, -2.8727036, -8, -2.8727036)
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+9:1/0/z_index = -1
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:1/0 = 0
+0:2/0 = 0
+0:2/0/z_index = -1
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/z_index = -1
+3:2/0 = 0
+4:2/0 = 0
+4:2/0/z_index = -1
+5:2/0 = 0
+5:2/0/z_index = -1
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+9:2/0/z_index = -1
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:2/0 = 0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+0:3/0 = 0
+0:3/0/z_index = -1
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/z_index = -1
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/z_index = -1
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.524496, -8, -1.828083, 8, -8, 8)
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+9:3/0/z_index = -1
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1762905, -8, 8, -8, 8, 8, 2.3503933, 8)
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_40be5"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/1 = SubResource("TileSetAtlasSource_kr436")
+
+[node name="BaseStage" type="Node2D" unique_id=1996748684]
+script = ExtResource("1_u5ur2")
+
+[node name="StageController" type="Node2D" parent="." unique_id=87433]
+script = ExtResource("2_s8ccx")
+shop_item_scene = ExtResource("3_86t3g")
+weapon_pool = Array[PackedScene]([ExtResource("4_e1gcx"), ExtResource("5_o1njd"), ExtResource("6_w62k0"), ExtResource("7_jybf7"), ExtResource("8_u0or7"), ExtResource("9_lnbh0"), ExtResource("10_hpoxw"), ExtResource("11_1gn1b"), ExtResource("12_0f7ff"), ExtResource("13_iiph0"), ExtResource("14_7oafr"), ExtResource("15_v2k1f"), ExtResource("16_iksmr"), ExtResource("17_rf0yv"), ExtResource("18_hdses"), ExtResource("19_a00qc"), ExtResource("20_peg7u"), ExtResource("21_x68a7")])
+relic_pool = Array[ExtResource("22_735bh")]([ExtResource("23_ch4c3"), ExtResource("24_5o5eq"), ExtResource("25_3g52x"), ExtResource("26_phju6"), ExtResource("27_f45e2"), ExtResource("28_lpbll"), ExtResource("29_ef03v"), ExtResource("30_fsvpb"), ExtResource("31_aaurt"), ExtResource("32_1th8g"), ExtResource("33_wce05"), ExtResource("34_uv7yg"), ExtResource("35_rc1is"), ExtResource("36_5msku"), ExtResource("37_4sgcj"), ExtResource("38_ryhwt")])
+weapon_pickup_scene = ExtResource("39_monb4")
+relic_pickup_scene = ExtResource("40_ojwu6")
+
+[node name="RewardSpawner" type="Node2D" parent="." unique_id=1394805550]
+position = Vector2(338, 42)
+script = ExtResource("41_cxwik")
+chest_scene = ExtResource("42_2yjd4")
+
+[node name="ExitArea" type="Area2D" parent="." unique_id=229801116]
+position = Vector2(723, 42)
+scale = Vector2(2, 2)
+script = ExtResource("43_as703")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea" unique_id=2029433658]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_6d6bh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ExitArea" unique_id=988784189]
+sprite_frames = SubResource("SpriteFrames_ct8tx")
+autoplay = "default"
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=12754450 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("45_n1clm")
+enemy_pool = Array[PackedScene]([ExtResource("46_s8ccx")])
+spawn_points = [NodePath("../SpawnPoints/P1")]
+min_enemies = 1
+max_enemies = 2
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1603497270]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=377593012]
+
+[node name="P1" type="Node2D" parent="SpawnPoints" unique_id=1758289203]
+position = Vector2(647, 39)
+
+[node name="P2" type="Node2D" parent="SpawnPoints" unique_id=44525869]
+
+[node name="P3" type="Node2D" parent="SpawnPoints" unique_id=1618657821]
+
+[node name="ShopPoints" type="Node2D" parent="." unique_id=1406030973]
+
+[node name="P1" type="Node2D" parent="ShopPoints" unique_id=970355507]
+
+[node name="P2" type="Node2D" parent="ShopPoints" unique_id=868069031]
+
+[node name="P3" type="Node2D" parent="ShopPoints" unique_id=165201280]
+
+[node name="P4" type="Node2D" parent="ShopPoints" unique_id=1264382511]
+
+[node name="CanvasLayer" parent="." unique_id=150711430 instance=ExtResource("46_mye7s")]
+visible = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1225181151]
+scale = Vector2(1.5, 1.5)
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAEAAAAAAAEAAQABAAEAAAAAAAIAAQABAAEAAAAAAAMAAQABAAEAAAABAAMAAQABAAEAAAABAAIAAQABAAEAAAABAAEAAQABAAEAAAABAAAAAQABAAEAAAACAAAAAQABAAEAAAACAAEAAQABAAEAAAACAAIAAQABAAEAAAACAAMAAQABAAEAAAADAAMAAQABAAEAAAADAAIAAQABAAEAAAADAAEAAQABAAEAAAADAAAAAQABAAEAAAAEAAMAAQABAAEAAAAEAAIAAQABAAEAAAAEAAEAAQABAAEAAAAEAAAAAQABAAEAAAAFAAAAAQABAAEAAAAFAAEAAQABAAEAAAAFAAIAAQABAAEAAAAFAAMAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAGAAEAAQABAAEAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAHAAEAAQABAAEAAAAHAAIAAQABAAEAAAAHAAMAAQABAAEAAAAHAP//AQABAAEAAAAGAP//AQABAAEAAAAFAP//AQABAAEAAAAEAP//AQABAAEAAAAEAP7/AQABAAEAAAAFAP7/AQABAAEAAAAGAP7/AQABAAEAAAAHAP7/AQABAAEAAAAHAP3/AQABAAEAAAAGAP3/AQABAAEAAAAFAP3/AQABAAEAAAAEAP3/AQABAAEAAAAEAPz/AQABAAEAAAAFAPz/AQABAAEAAAAGAPz/AQABAAEAAAAHAPz/AQABAAEAAAAIAAAAAQABAAEAAAAIAAEAAQABAAEAAAAIAAIAAQABAAEAAAAIAAMAAQABAAEAAAAJAAMAAQABAAEAAAAJAAIAAQABAAEAAAAJAAEAAQABAAEAAAAJAAAAAQABAAEAAAAKAAAAAQABAAEAAAAKAAEAAQABAAEAAAAKAAIAAQABAAEAAAAKAAMAAQABAAEAAAALAAMAAQABAAEAAAALAAIAAQABAAEAAAALAAEAAQABAAEAAAALAAAAAQABAAEAAAAIAAQAAQABAAEAAAAJAAQAAQABAAEAAAAKAAQAAQABAAEAAAALAAQAAQABAAEAAAALAAUAAQABAAEAAAAKAAUAAQABAAEAAAAJAAUAAQABAAEAAAAIAAUAAQABAAEAAAAIAAYAAQABAAEAAAAJAAYAAQABAAEAAAAKAAYAAQABAAEAAAALAAYAAQABAAEAAAALAAcAAQABAAEAAAAKAAcAAQABAAEAAAAJAAcAAQABAAEAAAAIAAcAAQABAAEAAAAMAAAAAQABAAEAAAAMAAEAAQABAAEAAAAMAAIAAQABAAEAAAAMAAMAAQABAAEAAAANAAMAAQABAAEAAAANAAIAAQABAAEAAAANAAEAAQABAAEAAAANAAAAAQABAAEAAAAOAAAAAQABAAEAAAAOAAEAAQABAAEAAAAOAAIAAQABAAEAAAAOAAMAAQABAAEAAAAPAAMAAQABAAEAAAAPAAIAAQABAAEAAAAPAAEAAQABAAEAAAAPAAAAAQABAAEAAAAQAAAAAQABAAEAAAAQAAEAAQABAAEAAAAQAAIAAQABAAEAAAAQAAMAAQABAAEAAAARAAMAAQABAAEAAAARAAIAAQABAAEAAAARAAEAAQABAAEAAAARAAAAAQABAAEAAAASAAAAAQABAAEAAAASAAEAAQABAAEAAAASAAIAAQABAAEAAAASAAMAAQABAAEAAAATAAMAAQABAAEAAAATAAIAAQABAAEAAAATAAEAAQABAAEAAAATAAAAAQABAAEAAAATAAQAAQABAAEAAAASAAQAAQABAAEAAAARAAQAAQABAAEAAAAQAAQAAQABAAEAAAAQAAUAAQABAAEAAAARAAUAAQABAAEAAAASAAUAAQABAAEAAAATAAUAAQABAAEAAAATAAYAAQABAAEAAAASAAYAAQABAAEAAAARAAYAAQABAAEAAAAQAAYAAQABAAEAAAAQAAcAAQABAAEAAAARAAcAAQABAAEAAAASAAcAAQABAAEAAAATAAcAAQABAAEAAAATAP//AQABAAEAAAASAP//AQABAAEAAAARAP//AQABAAEAAAAQAP//AQABAAEAAAAQAP7/AQABAAEAAAARAP7/AQABAAEAAAASAP7/AQABAAEAAAATAP7/AQABAAEAAAATAP3/AQABAAEAAAASAP3/AQABAAEAAAARAP3/AQABAAEAAAAQAP3/AQABAAEAAAAQAPz/AQABAAEAAAARAPz/AQABAAEAAAASAPz/AQABAAEAAAATAPz/AQABAAEAAAAUAAMAAQABAAEAAAAUAAIAAQABAAEAAAAUAAEAAQABAAEAAAAUAAAAAQABAAEAAAAVAAAAAQABAAEAAAAVAAEAAQABAAEAAAAVAAIAAQABAAEAAAAVAAMAAQABAAEAAAAWAAMAAQABAAEAAAAWAAIAAQABAAEAAAAWAAEAAQABAAEAAAAWAAAAAQABAAEAAAAXAAAAAQABAAEAAAAXAAEAAQABAAEAAAAXAAIAAQABAAEAAAAXAAMAAQABAAEAAAAUAAQAAQABAAEAAAAUAAUAAQABAAEAAAAUAAYAAQABAAEAAAAUAAcAAQABAAEAAAAVAAcAAQABAAEAAAAVAAYAAQABAAEAAAAVAAUAAQABAAEAAAAWAAUAAQABAAEAAAAWAAQAAQABAAEAAAAXAAQAAQABAAEAAAAXAAUAAQABAAEAAAAXAAYAAQABAAEAAAAWAAYAAQABAAEAAAAVAAQAAQABAAEAAAAWAAcAAQABAAEAAAAXAAcAAQABAAEAAAAUAP//AQABAAEAAAAUAP7/AQABAAEAAAAUAP3/AQABAAEAAAAUAPz/AQABAAEAAAAVAPz/AQABAAEAAAAWAPz/AQABAAEAAAAXAPz/AQABAAEAAAAXAP3/AQABAAEAAAAXAP7/AQABAAEAAAAXAP//AQABAAEAAAAWAP//AQABAAEAAAAWAP7/AQABAAEAAAAWAP3/AQABAAEAAAAVAP//AQABAAEAAAAVAP7/AQABAAEAAAAVAP3/AQABAAEAAAAYAAAAAQABAAEAAAAZAAAAAQABAAEAAAAaAAAAAQABAAEAAAAbAAAAAQABAAEAAAAbAAEAAQABAAEAAAAaAAEAAQABAAEAAAAZAAEAAQABAAEAAAAYAAEAAQABAAEAAAAYAAIAAQABAAEAAAAZAAIAAQABAAEAAAAaAAIAAQABAAEAAAAbAAIAAQABAAEAAAAbAAMAAQABAAEAAAAaAAMAAQABAAEAAAAZAAMAAQABAAEAAAAYAAMAAQABAAEAAAAcAAAAAQABAAEAAAAdAAAAAQABAAEAAAAeAAAAAQABAAEAAAAfAAAAAQABAAEAAAAfAAEAAQABAAEAAAAeAAEAAQABAAEAAAAdAAEAAQABAAEAAAAcAAEAAQABAAEAAAAcAAIAAQABAAEAAAAdAAIAAQABAAEAAAAeAAIAAQABAAEAAAAfAAIAAQABAAEAAAAfAAMAAQABAAEAAAAeAAMAAQABAAEAAAAdAAMAAQABAAEAAAAcAAMAAQABAAEAAAD/////AQAAAAAAAAADAPv/AQAAAAAAAAAPAPv/AQAAAAAAAAAAAP//AQABAAAAAAABAP//AQABAAAAAAACAP//AQABAAAAAAAEAPv/AQABAAAAAAAFAPv/AQABAAAAAAAGAPv/AQABAAAAAAAHAPv/AQABAAAAAAAJAP//AQABAAAAAAAKAP//AQABAAAAAAALAP//AQABAAAAAAAMAP//AQABAAAAAAANAP//AQABAAAAAAAOAP//AQABAAAAAAAQAPv/AQABAAAAAAARAPv/AQABAAAAAAASAPv/AQABAAAAAAATAPv/AQABAAAAAAAUAPv/AQABAAAAAAAVAPv/AQABAAAAAAAWAPv/AQABAAAAAAAXAPv/AQABAAAAAAAZAP//AQABAAAAAAAaAP//AQABAAAAAAAbAP//AQABAAAAAAAcAP//AQABAAAAAAAdAP//AQABAAAAAAAeAP//AQABAAAAAAAfAP//AQABAAAAAAAIAPv/AQADAAAAAAAYAPv/AQADAAAAAAAgAP//AQADAAAAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAD//wIAAQAAAAEAAAD//wMAAQAAAAEAAAADAPz/AQAAAAEAAAADAP3/AQAAAAEAAAADAP7/AQAAAAEAAAAHAAUAAQAAAAEAAAAHAAYAAQAAAAEAAAAHAAcAAQAAAAEAAAAPAAUAAQAAAAEAAAAPAAYAAQAAAAEAAAAPAAcAAQAAAAEAAAAPAPz/AQAAAAEAAAAPAP3/AQAAAAEAAAAPAP7/AQAAAAEAAAD//wQAAQAAAAQAAAAHAAgAAQAAAAQAAAAPAAgAAQAAAAQAAAAAAAQAAQABAAQAAAABAAQAAQABAAQAAAACAAQAAQABAAQAAAADAAQAAQABAAQAAAAEAAQAAQABAAQAAAAFAAQAAQABAAQAAAAGAAQAAQABAAQAAAAIAAgAAQABAAQAAAAJAAgAAQABAAQAAAAKAAgAAQABAAQAAAALAAgAAQABAAQAAAANAAQAAQABAAQAAAAOAAQAAQABAAQAAAAQAAgAAQABAAQAAAARAAgAAQABAAQAAAASAAgAAQABAAQAAAATAAgAAQABAAQAAAAUAAgAAQABAAQAAAAVAAgAAQABAAQAAAAWAAgAAQABAAQAAAAXAAgAAQABAAQAAAAZAAQAAQABAAQAAAAaAAQAAQABAAQAAAAbAAQAAQABAAQAAAAcAAQAAQABAAQAAAAdAAQAAQABAAQAAAAeAAQAAQABAAQAAAAfAAQAAQABAAQAAAAIAPz/AQAJAAEAAAAIAP3/AQAJAAEAAAAIAP7/AQAJAAEAAAAYAPz/AQAJAAEAAAAYAP3/AQAJAAEAAAAYAP7/AQAJAAEAAAAgAAAAAQAJAAEAAAAgAAEAAQAJAAEAAAAgAAIAAQAJAAEAAAAgAAMAAQAJAAEAAAAYAAUAAQAJAAEAAAAYAAYAAQAJAAEAAAAYAAcAAQAJAAEAAAAMAAUAAQAJAAEAAAAMAAYAAQAJAAEAAAAMAAcAAQAJAAEAAAAMAAgAAQADAAQAAAAYAAgAAQADAAQAAAAgAAQAAQADAAQAAAAIAP//AQADAAEAAAAYAP//AQADAAEAAAADAP//AQAFAAEAAAAPAP//AQAFAAEAAAAMAAQAAQADAAMAAAAYAAQAAQADAAMAAAAPAAQAAQAFAAMAAAAHAAQAAQAFAAMAAAA=")
+tile_set = SubResource("TileSet_40be5")
+
+[node name="Bean" parent="." unique_id=569957952 instance=ExtResource("49_86t3g")]
+position = Vector2(30, 43)

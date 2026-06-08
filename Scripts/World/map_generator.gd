@@ -27,7 +27,6 @@ func generate():
 	var floor_configs = config.floor_configs
 	var max_total_duels = config.max_total_duels
 
-	# 🟢 START FLOOR (uses FloorConfig[0])
 	var start_config = floor_configs[0]
 	var start_count = randi_range(start_config.min_nodes, start_config.max_nodes)
 
@@ -39,7 +38,6 @@ func generate():
 	floor_nodes.append(first_floor)
 	layout_floor(first_floor, 0)
 
-	# 🟡 MAIN FLOORS
 	for f in range(1, floors):
 		var prev_floor = floor_nodes[f - 1]
 		var new_floor = generate_floor_nodes(f, floor_configs, max_total_duels)
@@ -50,7 +48,6 @@ func generate():
 		floor_nodes.append(new_floor)
 		layout_floor(new_floor, f)
 
-	# 🛒 SHOP FLOOR
 	var shop = create_node(floors, MapNode.NodeType.SHOP)
 
 	for node in floor_nodes[floors - 1]:
@@ -58,7 +55,6 @@ func generate():
 
 	floor_nodes.append([shop])
 
-	# 👑 BOSS FLOOR
 	var boss = create_node(floors + 1, MapNode.NodeType.BOSS)
 	link_nodes(shop, boss, false)
 
@@ -69,7 +65,6 @@ func generate():
 
 	print("Map generated")
 
-	# find MapManager
 	var manager = get_tree().get_first_node_in_group("map_manager")
 	if manager:
 		manager.set_nodes(all_nodes)
@@ -105,14 +100,12 @@ func pick_node_type(config: FloorConfig, duel_count: int, encounter_count: int, 
 	weights[MapNode.NodeType.ENCOUNTER] = config.encounter_weight
 	weights[MapNode.NodeType.DUEL] = config.duel_weight
 
-	# ❌ floor limits
 	if duel_count >= config.max_duel_nodes:
 		weights[MapNode.NodeType.DUEL] = 0
 	
 	if encounter_count >= config.max_encounter_nodes:
 		weights[MapNode.NodeType.ENCOUNTER] = 0
 
-	# ❌ global level limit
 	if total_duels_spawned >= max_total_duels:
 		weights[MapNode.NodeType.DUEL] = 0
 
@@ -140,7 +133,6 @@ func connect_floors(prev_floor, next_floor):
 	var prev_count = prev_floor.size()
 	var next_count = next_floor.size()
 
-	# ✅ STEP 1: ensure every next node is reachable
 	for next in next_floor:
 		var closest_prev = prev_floor[0]
 		var min_dist = abs(next.position.y - closest_prev.position.y)
@@ -153,7 +145,6 @@ func connect_floors(prev_floor, next_floor):
 
 		link_nodes(closest_prev, next, false)
 
-	# ✅ STEP 2: ensure every prev node has at least one forward path
 	for prev in prev_floor:
 		var has_connection = false
 
@@ -176,7 +167,7 @@ func connect_floors(prev_floor, next_floor):
 
 func add_lateral_connections(nodes):
 	for i in range(nodes.size() - 1):
-		var chance = 0.6  # base chance
+		var chance = 0.6
 
 		if nodes.size() >= 4:
 			chance = 0.4
@@ -190,7 +181,7 @@ func add_lateral_connections(nodes):
 
 func link_nodes(a: MapNode, b: MapNode, lateral: bool):
 	var conn = Connection.new()
-	conn.target = b   # ✅ DIRECT REFERENCE
+	conn.target = b
 	conn.is_lateral = lateral
 	
 	if lateral:
@@ -210,7 +201,6 @@ func create_node(floor: int, type):
 	node.locked = false
 	node.visited = false
 
-	# 🎮 assign gameplay scene
 	node.stage_scene = pick_stage_scene(type)
 
 	node.add_to_group("map_node")
@@ -255,20 +245,26 @@ func layout_floor(nodes: Array, floor_index: int):
 		)
 
 func go_to_next_level():
+	call_deferred("_go_to_next_level_impl")
+
+func _go_to_next_level_impl():
 	current_level_index += 1
 
 	if current_level_index >= level_configs.size():
-		print("🎉 GAME COMPLETE")
 		var manager = get_tree().get_first_node_in_group("run_manager")
 		if manager:
 			manager.on_run_success()
 		return
 
-	print("➡️ Moving to level:", current_level_index)
-
 	generate()
 
-func show_victory():
-	print("🏆 YOU WIN")
+	var map_camera = get_tree().current_scene.get_node_or_null("MapCamera")
+	if map_camera:
+		map_camera.global_position = Vector2.ZERO
 
+	var map_manager = get_tree().get_first_node_in_group("map_manager")
+	if map_manager:
+		map_manager.return_to_map()
+
+func show_victory():
 	get_tree().paused = true

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b3agnokpii74j"]
+
+[ext_resource type="Script" uid="uid://bdmt7yai5oc5p" path="res://Scripts/Entities/range_goon.gd" id="1_38j8r"]
+[ext_resource type="Texture2D" uid="uid://hnp8fthekqwn" path="res://Assets/Maps and Sheets/f2strrangegoon.png" id="2_38j8r"]
+[ext_resource type="Script" uid="uid://cipit3fmxu3lh" path="res://Scripts/System/pattern_shotgun_shot.gd" id="3_38j8r"]
+[ext_resource type="PackedScene" uid="uid://cpn5jrxn5esnj" path="res://Scenes/Weaponry/NormalBullet.tscn" id="4_6pki3"]
+[ext_resource type="Texture2D" uid="uid://ndpti50qrvtn" path="res://Assets/Sprites/EvilBullet.png" id="5_dpctx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq05r"]
+atlas = ExtResource("2_38j8r")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fks3c"]
+atlas = ExtResource("2_38j8r")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pki3"]
+atlas = ExtResource("2_38j8r")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nu7sp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq05r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fks3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pki3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqm5q"]
+
+[node name="F2StrongRangeGoon" type="CharacterBody2D" unique_id=905998835]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_38j8r")
+fire_rate = 0.5
+bullet_speed = 80.0
+damage = 10.0
+preferred_distance = 150.0
+move_speed = 120.0
+max_health = 100.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=377128677]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_nu7sp")
+autoplay = "default"
+frame_progress = 0.43528023
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873603479]
+shape = SubResource("CapsuleShape2D_wqm5q")
+
+[node name="BulletSpawn" type="Marker2D" parent="." unique_id=159332422]
+position = Vector2(11, 0)
+
+[node name="FirePattern" type="Node2D" parent="." unique_id=532163617]
+script = ExtResource("3_38j8r")
+bullet_scene = ExtResource("4_6pki3")
+bullet_texture = ExtResource("5_dpctx")
+bullet_speed = 80.0
+damage = 10.0
+fire_rate = 0.5

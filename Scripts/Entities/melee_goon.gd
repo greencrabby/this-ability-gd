@@ -57,6 +57,5 @@ func _on_hit(body):
 	
 	body.take_damage(contact_damage, self)
 	
-	# trigger retreat
 	retreat_timer = retreat_time
 	retreat_direction = (global_position - body.global_position).normalized()

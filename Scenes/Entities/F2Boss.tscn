@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c6c8tmkhsg1b0"]
+
+[ext_resource type="Script" uid="uid://qfucrn0u8a70" path="res://Scripts/Entities/boss2.gd" id="1_8hbwo"]
+[ext_resource type="Script" uid="uid://cipit3fmxu3lh" path="res://Scripts/System/pattern_shotgun_shot.gd" id="3_5nmt8"]
+[ext_resource type="Script" uid="uid://cw7qs7jjcbcw2" path="res://Scripts/System/pattern_single_shot.gd" id="3_yvatt"]
+[ext_resource type="PackedScene" uid="uid://cpn5jrxn5esnj" path="res://Scenes/Weaponry/NormalBullet.tscn" id="4_cov7v"]
+[ext_resource type="Texture2D" uid="uid://ndpti50qrvtn" path="res://Assets/Sprites/EvilBullet.png" id="5_i7n5g"]
+[ext_resource type="PackedScene" uid="uid://ngewyydj7xyk" path="res://Scenes/Weaponry/BouncingBullet.tscn" id="7_guoa3"]
+[ext_resource type="Texture2D" uid="uid://cop2b02bq2eww" path="res://Assets/Sprites/boss2.png" id="7_yvatt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dw6y8"]
+radius = 22.0
+height = 52.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guoa3"]
+atlas = ExtResource("7_yvatt")
+region = Rect2(0, 0, 736, 785)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dkof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guoa3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="F2Boss" type="CharacterBody2D" unique_id=797738605]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_8hbwo")
+max_health = 2000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=776155668]
+shape = SubResource("CapsuleShape2D_dw6y8")
+
+[node name="MinigunPattern" type="Node2D" parent="." unique_id=32966167]
+script = ExtResource("3_yvatt")
+bullet_scene = ExtResource("4_cov7v")
+bullet_texture = ExtResource("5_i7n5g")
+bullet_speed = 80.0
+fire_rate = 40.0
+
+[node name="ShotgunPattern" type="Node2D" parent="." unique_id=60873292]
+script = ExtResource("3_5nmt8")
+bullet_scene = ExtResource("4_cov7v")
+bullet_texture = ExtResource("5_i7n5g")
+bullet_speed = 100.0
+fire_rate = 2.0
+
+[node name="SniperPattern" type="Node2D" parent="." unique_id=1417267882]
+script = ExtResource("3_yvatt")
+bullet_scene = ExtResource("7_guoa3")
+bullet_texture = ExtResource("5_i7n5g")
+damage = 50.0
+
+[node name="BulletSpawn" type="Marker2D" parent="." unique_id=519566310]
+position = Vector2(-19, -4)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=892490257]
+scale = Vector2(0.07, 0.07)
+sprite_frames = SubResource("SpriteFrames_0dkof")

@@ -25,3 +25,6 @@ func interact(player):
 		pickup.global_position = global_position
 
 	queue_free()
+
+func get_weapon():
+	return weapon_scene

@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bol2wdon8qh0h" path="res://Scripts/World/Data/level1.tres" id="5_bm7dg"]
 [ext_resource type="Script" uid="uid://bydufsyufe75d" path="res://Scripts/World/level_config.gd" id="6_k8ej5"]
 [ext_resource type="PackedScene" uid="uid://cw480a6y3fkfg" path="res://Scenes/UI/MainUI.tscn" id="6_nf17q"]
+[ext_resource type="Resource" uid="uid://368aa1ekixe0" path="res://Scripts/World/Data/level2.tres" id="9_kibkm"]
 
 [node name="Main" type="Node2D" unique_id=501967048]
 script = ExtResource("1_4narx")
@@ -23,7 +24,7 @@ script = ExtResource("1_myw4e")
 [node name="MapGenerator" type="Node2D" parent="." unique_id=1558993051]
 script = ExtResource("3_jl77m")
 node_scene = ExtResource("4_jl77m")
-level_configs = Array[ExtResource("6_k8ej5")]([ExtResource("5_bm7dg")])
+level_configs = Array[ExtResource("6_k8ej5")]([ExtResource("5_bm7dg"), ExtResource("9_kibkm")])
 
 [node name="MapContainer" type="Node2D" parent="." unique_id=1113824002]
 
@@ -32,3 +33,20 @@ level_configs = Array[ExtResource("6_k8ej5")]([ExtResource("5_bm7dg")])
 [node name="MapCamera" type="Camera2D" parent="." unique_id=416813283]
 
 [node name="CanvasLayer" parent="." unique_id=1971691407 instance=ExtResource("6_nf17q")]
+
+[node name="EndRun" type="CanvasLayer" parent="." unique_id=1666887004]
+
+[node name="EndRunButton" type="Button" parent="EndRun" unique_id=1609395602]
+offset_left = -1.0
+offset_top = 292.0
+offset_right = 71.0
+offset_bottom = 323.0
+text = "End Run"
+
+[node name="EndRunConfirmation" type="ConfirmationDialog" parent="EndRun" unique_id=951005656]
+oversampling_override = 1.0
+title = "End Run?"
+position = Vector2i(424, 274)
+size = Vector2i(303, 100)
+ok_button_text = "End Run"
+dialog_text = "Ending the run will forfeit all rewards"

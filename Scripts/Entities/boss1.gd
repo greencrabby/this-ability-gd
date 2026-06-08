@@ -1,17 +1,11 @@
 class_name Boss1
 extends EnemyBase
 
-# =========================
-# 🎯 PHASE SYSTEM
-# =========================
 enum Phase { PHASE_1, PHASE_2 }
 var phase: Phase = Phase.PHASE_1
 @export var phase_2_threshold: float = 0.5
 @export var phase_2_texture: Texture2D
 
-# =========================
-# 📊 BOSS BALANCING (Inspector)
-# =========================
 @export_group("Normal Attack")
 @export var normal_bullet_speed: float = 400.0
 @export var normal_bullet_damage: float = 10.0
@@ -20,38 +14,25 @@ var phase: Phase = Phase.PHASE_1
 @export var strong_bullet_speed: float = 600.0
 @export var strong_bullet_damage: float = 20.0
 
-# =========================
-# 🎮 STATE
-# =========================
 var attack_cooldown: float = 0.0
 var is_attacking: bool = false
 var is_dead_boss: bool = false 
 
-# =========================
-# 🎨 NODES
-# =========================
-@onready var sprite: Sprite2D = $Sprite2D 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var bullet_spawn: Marker2D = $BulletSpawn
 @onready var pattern_single = $FirePattern1 
 @onready var pattern_radial = $FirePattern2 
 
-# Randomness
 var random_dir: Vector2 = Vector2.ZERO
 var random_timer: float = 0.0
 @export var randomness_interval: float = 0.5
 @export var randomness_strength: float = 0.3
 
-# =========================
-# 🚀 INIT
-# =========================
 func _ready():
 	super._ready()
 	if MusicManager:
-		MusicManager.play_track("boss")
+		MusicManager.play_track("boss1")
 
-# =========================
-# 🔄 PROCESS
-# =========================
 func _process(delta):
 	if current_health <= 0 or player == null or is_dead_boss:
 		return
@@ -73,28 +54,16 @@ func _process(delta):
 
 	handle_behavior()
 
-# =========================
-# 🔄 PHASE TRANSITION
-# =========================
 func handle_phase_transition():
 	var hp_percent = current_health / max_health
 	if phase == Phase.PHASE_1 and hp_percent <= phase_2_threshold:
 		phase = Phase.PHASE_2
-		trigger_windup("Entering Phase 2!", 1.5, func():
-			if phase_2_texture:
-				sprite.texture = phase_2_texture
-			
-			sprite.self_modulate = Color(1.5, 0.5, 0.5) 
-			var tw = create_tween()
-			tw.tween_property(sprite, "scale", Vector2(1.5, 1.5), 0.1)
-			tw.tween_property(sprite, "scale", Vector2(1.0, 1.0), 0.2)
-			
-			end_attack(1.0)
-		)
+		is_attacking = true
+		play_anim("phasechange")
 
-# =========================
-# 🧠 BEHAVIOR
-# =========================
+		await sprite.animation_finished
+		is_attacking = false
+
 func handle_behavior():
 	var dist = global_position.distance_to(player.global_position)
 	if phase == Phase.PHASE_1:
@@ -109,91 +78,99 @@ func handle_behavior():
 func move_towards_player():
 	if player == null: return
 	
-	# 1. Update Randomness Timer
 	random_timer -= get_process_delta_time()
 	if random_timer <= 0:
 		random_dir = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
 		random_timer = randomness_interval
 
-	# 2. Calculate Direction (Like the Melee Enemy)
 	var to_player = (player.global_position - global_position).normalized()
-	
-	# Mix direct path with randomness to prevent sticking on corners
+
 	var final_dir = (to_player + random_dir * randomness_strength).normalized()
-	
-	# 3. Wall Avoidance
+
 	if is_on_wall():
-		random_dir = get_wall_normal() # Bounce off the wall
+		random_dir = get_wall_normal()
 	
 	velocity = final_dir * 100
+	
+	if phase == Phase.PHASE_1:
+		play_anim("idlep1")
+	else:
+		play_anim("idlep2")
 	move_and_slide()
 
-# =========================
-# ⚔️ ATTACK STARTERS
-# =========================
-func trigger_windup(attack_name: String, duration: float, callback: Callable):
+func trigger_windup(anim_name:String, callback:Callable):
 	is_attacking = true
-	sprite.modulate = Color.RED 
-	await get_tree().create_timer(duration).timeout
-	if current_health > 0: callback.call()
+
+	play_anim(anim_name)
+
+	await sprite.animation_finished
+
+	if current_health > 0:
+		callback.call()
 
 func start_melee(stronger := false):
-	trigger_windup("Melee", 0.6, func():
+	var windup = "slash_windupp1"
+	var attack = "slashp1"
+
+	if phase == Phase.PHASE_2:
+		windup = "slash_windupp2"
+		attack = "slashp2"
+
+	trigger_windup(windup, func():
+		play_anim(attack)
 		perform_melee(stronger)
+		await sprite.animation_finished
 		end_attack(0.8)
 	)
 
 func start_shoot():
-	trigger_windup("Shoot", 0.8, func():
+	trigger_windup("shoot_windupp1", func():
+		play_anim("shootp1")
 		perform_shoot()
+		await sprite.animation_finished
 		end_attack(1.0)
 	)
 
 func start_slam():
-	trigger_windup("Slam", 1.0, func():
+	trigger_windup("slam_windupp2", func():
+		play_anim("slamp2")
 		perform_slam()
+		await sprite.animation_finished
 		end_attack(1.5)
 	)
 
-# =========================
-# 💥 PERFORM ATTACKS (With Stat Overrides)
-# =========================
 func perform_melee(stronger: bool):
 	var damage_val = 25 if stronger else 10
 	if global_position.distance_to(player.global_position) < 130:
-		# 🟢 Call the player's damage function, not the RunManager directly
 		if player.has_method("take_damage"):
 			player.take_damage(damage_val, self)
 
 func perform_shoot():
 	if pattern_single:
-		# Use strong stats if in Phase 2
 		var s = strong_bullet_speed if phase == Phase.PHASE_2 else normal_bullet_speed
 		var d = strong_bullet_damage if phase == Phase.PHASE_2 else normal_bullet_damage
 		
-		# We pass these to a helper function that tells the pattern what to do
 		spawn_with_stats(pattern_single, s, d)
 
 func perform_slam():
 	if pattern_radial:
-		# Slams are always "Strong" stats
 		spawn_with_stats(pattern_radial, strong_bullet_speed * 0.7, strong_bullet_damage)
 
-# Helper to "Inject" stats into the pattern instance
 func spawn_with_stats(pattern_node, speed, damage):
-	# We temporarily change the pattern's exports before it fires
 	if "custom_speed" in pattern_node: pattern_node.custom_speed = speed
 	if "custom_damage" in pattern_node: pattern_node.custom_damage = damage
 	pattern_node.fire(self, player.global_position)
 
 func end_attack(cooldown_time):
-	sprite.modulate = Color.WHITE 
+	sprite.modulate = Color.WHITE
 	is_attacking = false
 	attack_cooldown = cooldown_time
 
-# =========================
-# 💀 DIE
-# =========================
+	if phase == Phase.PHASE_1:
+		play_anim("idlep1")
+	else:
+		play_anim("idlep2")
+
 func die():
 	is_dead_boss = true
 	if MusicManager: MusicManager.play_track("gameplay")
@@ -201,3 +178,6 @@ func die():
 	tw.tween_property(sprite, "modulate", Color.BLACK, 0.5)
 	tw.tween_callback(func(): super.die())
 	
+func play_anim(anim_name: String):
+	if sprite.animation != anim_name:
+		sprite.play(anim_name)
