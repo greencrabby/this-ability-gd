@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bn3rqdu5l5rrs"]
 
-[ext_resource type="Script" uid="uid://cpy4mf84v8dfp" path="res://weapon_info_panel.gd" id="1_wxxeu"]
+[ext_resource type="Script" uid="uid://cpy4mf84v8dfp" path="res://Scripts/Weaponry/weapon_info_panel.gd" id="1_wxxeu"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_28rd0"]
 

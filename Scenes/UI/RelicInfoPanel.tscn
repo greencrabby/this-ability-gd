@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ba1m2ut6fx8l8"]
 
-[ext_resource type="Script" uid="uid://52iib1rrehjp" path="res://relic_info_panel.gd" id="1_lomng"]
+[ext_resource type="Script" uid="uid://52iib1rrehjp" path="res://Scripts/Relics/relic_info_panel.gd" id="1_lomng"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lomng"]
 
